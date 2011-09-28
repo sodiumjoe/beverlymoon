@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>MOON | Projects | Contact Lens Case {{ resource.meta.title_ending }}</title>
+<meta charset="utf-8" />
+<meta name="description" content="{{ resource.meta.description }}">
+<meta name="author" content="{{ resource.meta.author }}">
+<link rel="stylesheet" href="{{ media_url('css/site.css') }}">
+<link rel="stylesheet" href="{{ media_url('css/grid.css') }}">
+{% block favicons %}
+<!-- Place favicon.ico & apple-touch-icon.png
+        in the root of your domain and delete these references -->
+<link rel="shortcut icon" href="{{ media_url('/beverlymoon.png') }}">
+{% endblock favicons %}
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+        </script>
+        <![endif]-->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js?ver=1.4.0"></script>
+        <script type="text/javascript" src="{{ media_url('js/beverlymoon.js') }}"></script>
+		<script type="text/javascript" src="{{ media_url('js/jquery.cycle.lite.js') }}"></script>
+</head>
+    <body class="clearfix">
+        <div id="vertical"></div>
+        <div id="hoz" class="container_8">
+                <header class="grid_8 clearfix">
+                    <hgroup class="clearfix">
+                    <a id="logo-link" href="/"><img id="logo" src="{{ media_url('img/logo.png') }}" /></a>
+                    <nav>
+                    {# Move main menu rendering away from the base layout. This
+                       way it can be used to generate the list many times, in
+                       a footer, etc.
+                    #}
+                        {% from "macros.j2" import render_main_menu with context %}
+                        {{ render_main_menu() }}
+                    </nav>
+                    </hgroup>
+                    <hr class="grid-border" />
+					{% block sub_nav %}
+					{% endblock %}
+                </header>
+                <article id="content" class="grid_8 clearfix">
+                {# Main content block. Notice it has to pass through the
+                   Markdown filter to generate HTML. If a block in content
+                   pages contains only markup, you can omit the filter.
+                #}
+                    {% filter markdown -%}
+{% block main %}
+{% endblock main %}        
+{% block content %}{% endblock %}
+                    {%- endfilter %}
+                <hr class="grid-border" />
+                </article>
+                <footer class="clearfix grid_8">
+				{% from "macros.j2" import render_footer with context %}
+				{{ render_footer() }}
+                </footer>
+        </div>
+    </body>
+</html>

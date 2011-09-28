@@ -1,0 +1,15 @@
+{% extends "projects.j2" %}
+{% from "macros.j2" import render_excerpt with context  %}
+{% block content %}
+
+<ul class="quarter-container clearfix">
+{% for res in resource.node.walk_resources_sorted_by_time() %}
+<li class="frame">
+<div class="blog-quarter-img fade-trigger">
+{{ render_excerpt(res) }}
+</div>
+</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

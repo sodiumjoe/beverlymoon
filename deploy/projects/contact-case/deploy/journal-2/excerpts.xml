@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>
+        BASIC blog excerpts feed    </title>
+        <link href="journal-2\excerpts.xml" rel="self" />
+    
+        <link href="/"/>
+    
+        
+    <updated>2011-09-03T18:25:48Z</updated>
+
+    <id>/journal-2/excerpts.xml/</id>
+
+            <entry>
+            <title type="html">Small Parts</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/journal-2/smp.html"/>
+            <updated>2011-07-29T10:00:00Z</updated>
+            <published>2011-07-29T10:00:00Z</published>
+            <id>/journal-2/smp.html</id>
+
+            <content type="html">
+                &lt;p&gt;&lt;img alt=&#34;A Dark Image&#34; src=&#34;/media/img/3.jpg&#34; /&gt;&lt;/p&gt;
+                &lt;p&gt;Just dropped the materials at &lt;span class=&#34;caps&#34;&gt;SPM&lt;/span&gt;. Should have a first article to approve by next week. I&amp;#8217;m so nervous and excited at the same&amp;nbsp;time.&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Colors</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/journal-2/colors.html"/>
+            <updated>2011-07-22T10:00:00Z</updated>
+            <published>2011-07-22T10:00:00Z</published>
+            <id>/journal-2/colors.html</id>
+
+            <content type="html">
+                &lt;p&gt;&lt;img alt=&#34;Colors&#34; src=&#34;/media/img/colors.JPG&#34; /&gt;&lt;/p&gt;
+                &lt;p&gt;Picking out colors for the first sample production was not that easy since there were so many choices and I was limited to only 2 or 3 colors. Joe and I took some samples to our bathroom and looked at neutral colors that might work well in most&amp;nbsp;homes.&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Corian Samples</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/journal-2/corian.html"/>
+            <updated>2011-07-21T10:00:00Z</updated>
+            <published>2011-07-21T10:00:00Z</published>
+            <id>/journal-2/corian.html</id>
+
+            <content type="html">
+                &lt;p&gt;&lt;img alt=&#34;Corian Samples&#34; src=&#34;/media/img/corian.jpg&#34; /&gt;&lt;/p&gt;
+                &lt;p&gt;I had a hard time trying to find some Corian sheets for the first run of sample production.  Lots of headaches talking to various local shops and big box&amp;nbsp;retailers.&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Beginning</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/journal-2/beginning.html"/>
+            <updated>2011-07-20T10:00:00Z</updated>
+            <published>2011-07-20T10:00:00Z</published>
+            <id>/journal-2/beginning.html</id>
+
+            <content type="html">
+                &lt;p&gt;&lt;img alt=&#34;Sketch&#34; src=&#34;/media/img/sketch.jpg&#34; /&gt;&lt;/p&gt;
+                &lt;p&gt;It&amp;#8217;s been almost a year since the idea first popped into my head and more than a month since I actually took the initiative to get started on this project. Today, I brought Joe along to the place where the cases will be&amp;nbsp;manufactured.&lt;/p&gt;            </content>
+        </entry>
+    </feed>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>
+        BASIC blog full text feed    </title>
+        <link href="projects\contact-case\diary\atom.xml" rel="self" />
+    
+        <link href="/"/>
+    
+        
+    <updated>2011-09-25T23:30:33Z</updated>
+
+    <id>/projects/contact-case/diary/atom.xml/</id>
+
+            <entry>
+            <title type="html">First Samples</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/projects/contact-case/diary/first-samples.html"/>
+            <updated>2011-09-01T10:00:00Z</updated>
+            <published>2011-09-01T10:00:00Z</published>
+            <id>/projects/contact-case/diary/first-samples.html</id>
+
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">Joe</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/projects/contact-case/diary/joe.html"/>
+            <updated>2011-08-31T10:00:00Z</updated>
+            <published>2011-08-31T10:00:00Z</published>
+            <id>/projects/contact-case/diary/joe.html</id>
+
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">Second Sheet</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/projects/contact-case/diary/second-sheet.html"/>
+            <updated>2011-08-12T10:00:00Z</updated>
+            <published>2011-08-12T10:00:00Z</published>
+            <id>/projects/contact-case/diary/second-sheet.html</id>
+
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">First Article</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/projects/contact-case/diary/first-article.html"/>
+            <updated>2011-08-10T10:00:00Z</updated>
+            <published>2011-08-10T10:00:00Z</published>
+            <id>/projects/contact-case/diary/first-article.html</id>
+
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">Small Parts</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/projects/contact-case/diary/smp.html"/>
+            <updated>2011-07-29T10:00:00Z</updated>
+            <published>2011-07-29T10:00:00Z</published>
+            <id>/projects/contact-case/diary/smp.html</id>
+
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">Colors</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/projects/contact-case/diary/colors.html"/>
+            <updated>2011-07-22T10:00:00Z</updated>
+            <published>2011-07-22T10:00:00Z</published>
+            <id>/projects/contact-case/diary/colors.html</id>
+
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">Corian Samples</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/projects/contact-case/diary/corian.html"/>
+            <updated>2011-07-21T10:00:00Z</updated>
+            <published>2011-07-21T10:00:00Z</published>
+            <id>/projects/contact-case/diary/corian.html</id>
+
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">Beginning</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/projects/contact-case/diary/beginning.html"/>
+            <updated>2011-07-20T10:00:00Z</updated>
+            <published>2011-07-20T10:00:00Z</published>
+            <id>/projects/contact-case/diary/beginning.html</id>
+
+            <content type="html">
+                                            </content>
+        </entry>
+    </feed>

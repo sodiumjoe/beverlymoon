@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>
+        BASIC blog full text feed    </title>
+        <link href="journal-2\atom.xml" rel="self" />
+    
+        <link href="/"/>
+    
+        
+    <updated>2011-09-03T18:25:47Z</updated>
+
+    <id>/journal-2/atom.xml/</id>
+
+            <entry>
+            <title type="html">Small Parts</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/journal-2/smp.html"/>
+            <updated>2011-07-29T10:00:00Z</updated>
+            <published>2011-07-29T10:00:00Z</published>
+            <id>/journal-2/smp.html</id>
+
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">Colors</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/journal-2/colors.html"/>
+            <updated>2011-07-22T10:00:00Z</updated>
+            <published>2011-07-22T10:00:00Z</published>
+            <id>/journal-2/colors.html</id>
+
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">Corian Samples</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/journal-2/corian.html"/>
+            <updated>2011-07-21T10:00:00Z</updated>
+            <published>2011-07-21T10:00:00Z</published>
+            <id>/journal-2/corian.html</id>
+
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">Beginning</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/journal-2/beginning.html"/>
+            <updated>2011-07-20T10:00:00Z</updated>
+            <published>2011-07-20T10:00:00Z</published>
+            <id>/journal-2/beginning.html</id>
+
+            <content type="html">
+                                            </content>
+        </entry>
+    </feed>

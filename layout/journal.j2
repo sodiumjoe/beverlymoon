@@ -1,0 +1,30 @@
+{% extends "projects.j2" %}
+
+{% block content %}
+<div class="full frame fade-trigger">
+<div class="full-img">
+{% filter markdown|typogrify -%}
+{% mark image -%}
+{% block image -%}{%- endblock %}
+{%- endmark %}
+{%- endfilter %}
+		</div>
+		<div class="blog-post overlay-blog frame fade-hover">
+					<a href="{{ content_url(resource.url) }}" class="post-title">
+						<h1 class="title">{{ resource.meta.title }}</h1>
+						<time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}">
+						<p>{{ resource.meta.created.strftime('%B %d, %Y') }}</p>
+						</time>
+					</a>
+{% filter markdown|typogrify -%}
+{% mark excerpt %}
+{% block excerpt %}{% endblock %}
+{% endmark %}
+
+{% block body %}{% endblock %}
+{%- endfilter %}
+</div>
+
+</div>
+
+{% endblock %}

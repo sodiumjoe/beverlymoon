@@ -1,0 +1,14 @@
+{% extends "base.j2" %}
+{% from "macros.j2" import render_projects_menu with context  %}
+
+{% block sub_nav %}
+<nav>
+<div class="current_page">
+{% block current_project %}
+{% endblock %}
+</div>
+{{ render_projects_menu() }}
+</nav>
+{% endblock %}
+{% block main %}
+{% endblock %}

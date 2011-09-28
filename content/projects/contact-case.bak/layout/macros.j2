@@ -1,0 +1,72 @@
+{% macro render_main_menu() -%}
+<ul class="menu-container">
+<li><a class="nav-item selected" href="http://beverlymoon.com/projects">Projects</a></li>
+</ul>
+{%- endmacro %}
+
+{% macro render_projects_menu() -%}
+<div class="current_project">
+<a href="/">Contact Lens Case</a>
+</div>
+<ul class="clearfix menu-container">
+{% for menu_item in menu -%}
+<li><a class="nav-item" {% if menu_item.url+".html" == resource.url %}class="selected"{% endif %}
+href="/{{ menu_item.url }}">{{ menu_item.title }}</a></li>
+{%- endfor %}
+</ul>
+{%- endmacro %}
+
+{% macro render_excerpt(res, class=None) %}
+{% refer to res.url as post %}
+<article {{'class='~class if class }}>
+<div class="blog-post-img">
+<a href="{{ content_url(res.url) }}" class="clearfix">
+<span class="block-link"></span>
+</a>
+<div class="blog-post-ex fade-hover">
+<h1 class="title">{{ res.meta.title }}</h1>
+<time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
+{{ res.meta.created.strftime('%B %d, %Y') }}
+</time>
+{{ post.excerpt|markdown|typogrify }}
+</div>
+{{ post.image|markdown|typogrify }}
+</div>
+</article>
+{% endmacro %}
+
+{% macro render_nav(menu, cls=None) -%}
+{% if menu -%}
+<nav {{'class='~cls if cls }}>
+<ul>
+{% for item in menu -%}
+{% set active = False -%}
+{% if item.type == 'page' -%}
+{% set active = (resource.url ==
+site.content.resource_from_relative_path(item.url).url) -%}
+{% else -%}
+{% set active = (node ==
+site.content.node_from_relative_path(item.url)) -%}
+{%- endif %}
+{% set classes = ['button', 'white'] -%}
+{% do classes.append('active') if active -%}
+{% do classes.append(item.css_class) if item.css_class -%}
+<li>
+<a title="{{ item.description }}"
+class="{{ classes|join(' ') }}"
+href="{{ content_url(item.url) }}">
+{{ item.name }}
+</a>
+</li>
+{%- endfor %}
+</ul>
+</nav>
+{%- endif %}
+{%- endmacro %}
+
+{% macro render_footer() -%}
+<ul class="menu-container">
+<li><a class="nav-item" href="http://beverlymoon.com/about">About</a></li>
+<li><a href="mailto:mail@beverlymoon.com">Contact</a></li>
+</ul>
+{%- endmacro %}

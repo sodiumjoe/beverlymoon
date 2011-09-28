@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>
+        BASIC blog full text feed    </title>
+        <link href="journal\atom.xml" rel="self" />
+    
+        <link href="/"/>
+    
+        
+    <updated>2011-09-03T18:25:47Z</updated>
+
+    <id>/journal/atom.xml/</id>
+
+            <entry>
+            <title type="html">First Samples</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/journal/first-samples.html"/>
+            <updated>2011-09-01T10:00:00Z</updated>
+            <published>2011-09-01T10:00:00Z</published>
+            <id>/journal/first-samples.html</id>
+
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">Joe</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/journal/joe.html"/>
+            <updated>2011-08-31T10:00:00Z</updated>
+            <published>2011-08-31T10:00:00Z</published>
+            <id>/journal/joe.html</id>
+
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">Second Sheet</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/journal/second-sheet.html"/>
+            <updated>2011-08-12T10:00:00Z</updated>
+            <published>2011-08-12T10:00:00Z</published>
+            <id>/journal/second-sheet.html</id>
+
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">First Article</title>
+            <author><name>Joe Moon</name></author>
+            <link href="/journal/first-article.html"/>
+            <updated>2011-08-10T10:00:00Z</updated>
+            <published>2011-08-10T10:00:00Z</published>
+            <id>/journal/first-article.html</id>
+
+            <content type="html">
+                                            </content>
+        </entry>
+    </feed>

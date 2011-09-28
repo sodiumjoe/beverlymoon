@@ -1,0 +1,50 @@
+mode: learning
+media_root: media
+media_url: /media # will use relative path, prepend "/" for absolute path
+base_url: /
+content_url: content
+template: hyde.ext.templates.jinja.Jinja2Template
+plugins:
+    - hyde.ext.plugins.meta.MetaPlugin
+    - hyde.ext.plugins.auto_extend.AutoExtendPlugin
+    - hyde.ext.plugins.syntext.SyntextPlugin
+    - hyde.ext.plugins.sorter.SorterPlugin
+    - hyde.ext.plugins.tagger.TaggerPlugin
+    - hyde.ext.plugins.textlinks.TextlinksPlugin
+context:
+    data:
+        author:
+            name: Joe Moon
+            url: "http://byjoemoon.com"
+        layout:
+            name: Moon Case Layout
+        menu:
+          - title: Gallery
+            type: page
+            url: gallery
+          - title: PDX
+            type: page
+            url: pdx
+          - title: Diary
+            type: node
+            url: diary
+urlcleaner:
+    index_file_names:
+    - index.html
+    - gallery.html
+    - pdx.html
+    strip_extensions:
+    - html
+    append_slash: false
+meta:
+    nodemeta: meta.yaml
+    created: !!timestamp 2010-01-01 00:00:00
+    author: Joe Moon
+sorter:
+    time:
+        attr:
+            - meta.created
+        reverse: true
+        filters:
+            source.kind: html
+            meta.listable: true
