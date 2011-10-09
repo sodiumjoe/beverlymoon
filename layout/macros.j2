@@ -8,31 +8,46 @@ href="/{{ menu_item.url }}">{{ menu_item.title }}</a></li>
 {%- endmacro %}
 
 {% macro render_projects_menu() -%}
-<div><a class="current-project"  href="/projects/contact-case">Contact Lens Case</a></div>
+<div class="current-project"><a class="nav-item-left selected" href="/projects/contact-case">Contact Lens Case</a></div>
+<nav class="sub-nav">
 <ul class="menu-container">
 <li><a class="nav-item" href="/projects/contact-case/gallery">Gallery</a></li>
 <li><a class="nav-item" href="/projects/contact-case/pdx">PDX</a></li>
 <li><a class="nav-item" href="/projects/contact-case/diary">Diary</a></li>
 </ul>
+</nav>
 {%- endmacro %}
 
 {% macro render_excerpt(res, class=None) %}
-{% refer to res.url as post %}
-<article {{'class='~class if class }}>
-<div class="blog-post-img">
-<a href="{{ content_url(res.url) }}" class="clearfix">
-<span class="block-link"></span>
-</a>
-<div class="blog-post-ex fade-hover">
-<h1 class="title">{{ res.meta.title }}</h1>
-<time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
-{{ res.meta.created.strftime('%B %d, %Y') }}
-</time>
-{{ post.excerpt|markdown|typogrify }}
+{% refer to res.url as article %}
+	<a href="{{ content_url(res.url) }}" class="clearfix">
+		<span class="block-link"></span>
+	</a>
+	<article class="clearfix diary-ex">
+			<img alt="{{ res.meta.title }}" src="/media/img/{{ res.name|truncate(-5, true, "") }}.jpg" />
+			<div class="overlay fade-hover">
+			<div class="clearfix">
+				<h1 class="diary-post-title">{{ res.meta.title }}</h1>
+					<time class="diary-post-date" datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
+						{{ res.meta.created.strftime('%B %d, %Y') }}
+					</time>
+			</div>
+			{{ article.post|markdown|typogrify }}
+	</article>
+{% endmacro %}
+
+{% macro render_diary_nav(res) -%}
+<hgroup class="clearfix">
+<div class="current-project">
+<a class="nav-item-left" href="{{ content_url(res.node.url) }}">Back to list</a>
 </div>
-{{ post.image|markdown|typogrify }}
-</div>
-</article>
+<nav class="diary-nav clearfix">
+<ul class="menu-container">
+{% if res.next_by_time %}<li><a title="{{ res.next_by_time.meta.title }}" class="nav-item" href="{{ content_url(res.next_by_time.url) }}">Previous</a></li>{% endif %}
+{% if res.prev_by_time %}<li><a title="{{ res.prev_by_time.meta.title }}" class="nav-item" href="{{ content_url(res.prev_by_time.url) }}">Next</a></li>{% endif %}
+</ul>
+</nav>
+</hgroup>
 {% endmacro %}
 
 {% macro render_nav(menu, cls=None) -%}
@@ -67,6 +82,6 @@ href="{{ content_url(item.url) }}">
 {% macro render_footer() -%}
 <ul class="menu-container clearfix">
 <li><a class="nav-item" href="/about">About</a></li>
-<li><a href="mailto:mail@beverlymoon.com">Contact</a></li>
+<li><a class="nav-item" href="mailto:mail@beverlymoon.com">Contact</a></li>
 </ul>
 {%- endmacro %}

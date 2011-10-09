@@ -16,9 +16,6 @@
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
         </script>
         <![endif]-->
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js?ver=1.4.0"></script>
-        <script type="text/javascript" src="{{ media_url('js/beverlymoon.js') }}"></script>
-		<script type="text/javascript" src="{{ media_url('js/jquery.cycle.lite.js') }}"></script>
 </head>
     <body>
 		<div id="wrapper">
@@ -26,7 +23,7 @@
                 <header>
                     <hgroup class="clearfix">
                     <a id="logo-link" href="/"><img id="logo" alt="Moon" src="{{ media_url('img/logo.png') }}" /></a>
-                    <nav>
+                    <nav class="top-nav">
                     {# Move main menu rendering away from the base layout. This
                        way it can be used to generate the list many times, in
                        a footer, etc.
@@ -34,12 +31,12 @@
                         {% from "macros.j2" import render_main_menu with context %}
                         {{ render_main_menu() }}
                     </nav>
+                    </hgroup>
 					<div class="grid-border-wrapper">
                     <hr class="grid-border" />
 					</div>
 					{% block sub_nav %}
 					{% endblock %}
-                    </hgroup>
                 </header>
 				<div id="content" class="clearfix">
 				{# Main content block. Notice it has to pass through the
@@ -48,14 +45,17 @@
 				#}
 				{% filter markdown -%}{% block content %}{% endblock %}{%- endfilter %}
 				</div>
+				<div class="grid-border-wrapper">
+				<hr class="grid-border" />
+				</div>
                 <footer class="clearfix">
-					<div class="grid-border-wrapper">
-                    <hr class="grid-border" />
-					</div>
 				{% from "macros.j2" import render_footer with context %}
 				{{ render_footer() }}
                 </footer>
 			</div> {# main #}
 		</div> {# wrapper #}
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js?ver=1.4.0"></script>
+        <script type="text/javascript" src="{{ media_url('js/beverlymoon.js') }}"></script>
+		<script type="text/javascript" src="{{ media_url('js/jquery.cycle.lite.js') }}"></script>
     </body>
 </html>

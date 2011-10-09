@@ -1,0 +1,13 @@
+{% extends "projects.j2" %}
+{% from "macros.j2" import render_excerpt with context  %}
+{% block content %}
+
+<ul class="diary-list clearfix">
+{% for res in resource.node.walk_resources_sorted_by_time()|reverse() %}
+<li class="grid_4p frame fade-trigger">
+{{ render_excerpt(res, "") }}
+</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

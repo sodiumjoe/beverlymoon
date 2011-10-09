@@ -1,3 +1,4 @@
+$('html').addClass('js');
 $(document).ready(function(){
 
 	$('.slideshow').cycle({
@@ -25,8 +26,4 @@ $(document).ready(function(){
 
     });
 
-});
-
-$(window).load(function() {
-    $(".fade-hover").fadeTo("fast", 0);
 });

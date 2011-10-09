@@ -30,6 +30,14 @@ body {
 ----------------------------------------------------------------------------------------------------*/
 
 
+.grid_1p,
+.grid_2p,
+.grid_3p,
+.grid_4p,
+.grid_5p,
+.grid_6p,
+.grid_7p,
+.grid_8p,
 .grid_1,
 .grid_2,
 .grid_3,
@@ -74,38 +82,77 @@ body {
 ----------------------------------------------------------------------------------------------------*/
 
 
-.container_8 .grid_1 {
+.grid_1 {
 	width:60px;
 }
 
-.container_8 .grid_2 {
+.grid_2 {
 	width:140px;
 }
 
-.container_8 .grid_3 {
+.grid_3 {
 	width:220px;
 }
 
-.container_8 .grid_4 {
+.grid_4 {
 	width:300px;
 }
 
-.container_8 .grid_5 {
+.grid_5 {
 	width:380px;
 }
 
-.container_8 .grid_6 {
+.grid_6 {
 	width:460px;
 }
 
-.container_8 .grid_7 {
+.grid_7 {
 	width:540px;
 }
 
-.container_8 .grid_8 {
+.grid_8 {
 	width:620px;
 }
 
+
+.grid_1p {
+	width:40px;
+}
+
+.grid_2p {
+	width:120px;
+}
+
+.grid_3p {
+	width:200px;
+}
+
+.grid_4p {
+	width:280px;
+}
+
+.grid_5p {
+	width:360px;
+}
+
+.grid_6p {
+	width:440px;
+}
+
+.grid_7p {
+	width:520px;
+}
+
+.grid_8p {
+	max-width: 600px;
+	min-width: 280px;
+}
+
+@media (min-width: 775px) {
+	.grid_8p {
+		min-width: 600px;
+	}
+}
 
 
 

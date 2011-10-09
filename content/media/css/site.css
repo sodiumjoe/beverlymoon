@@ -437,20 +437,50 @@ table {
 
 body {
     background-color: #F8F8F8;
-	text-align: center;
 }
 
 #wrapper {
-	text-align: center;
 	margin: auto;
+	padding: 0px 60px;
+	text-align: center;
 }
 
 #main {
-	margin-top: 90px;
-	max-width: 960px;
-	display: inline-block;
 	text-align: left;
+	margin: 30px auto;
+	display: inline-block;
+	max-width: 960px;
 }
+
+@media (max-width: 1096px) {
+	#main {
+		max-width: 640px;
+	}
+}
+
+@media (max-width: 775px) {
+	#main {
+		max-width: 320px;
+	}
+}
+/*
+
+@media (min-width: 320px) {
+	#main {
+		min-width: 775px;
+	}
+}
+
+@media (min-width: 640px) {
+	#main {
+		min-width: 1096px;
+	}
+}
+
+	*/
+/* Avoid flash of unstyled content */
+
+.js .fade-hover { display: none; }
 
 
 /* NAV ELEMENTS */ 
@@ -462,43 +492,74 @@ body {
     padding: 0;
 } 
 
-nav {
-    float: right;
-    margin: 19px 0 0 0;
+.top-nav {
+	position: absolute;
+	bottom: -3px;
+	right: 10px;
+    margin: 0;
 }
 
-nav ul {
+.sub-nav {
+	float: right;
+}
+
+nav > ul {
     margin: 0;
     padding: 0;
 }
 
-nav li {
+nav > ul > li {
     list-style-type: none;
     display: inline;
-    margin: 0 -8px 0 0;
-    padding: 0 6px 0 0;
+    margin: 0 0px 0 0;
+    padding: 0 0px 0 0;
 }
 
-nav li a, nav li a:visited {
+.menu-container {
+	margin: 0 -10px 0 0;
+	padding: 0 0 0 -10px;
+}
+
+.menu-container > li {
+	display: inline;
+}
+
+.nav-item, .nav-item:visited, .nav-item-left, .nav-item-left:visited {
     text-decoration: none;
     color: #404040;
-    margin: 0 -4px 0 10px;
-    padding: 4px 8px 0 4px;
-    border: 1px solid #F8F8F8;
 }
 
-nav li a:hover {
+.nav-item, .nav-item:visited {
+    margin: -5px 3px -5px 3px;
+    padding: 5px 7px 5px 7px;
+}
+
+.nav-item:hover {
     color: #3D59AB;
 }
 
-nav li a.selected {
+.current-project {
+	float: left;
+}
+
+nav > ul > li > a:hover, .current-project > a:hover {
+    color: #3D59AB;
+}
+
+.selected, .selected:visited {
     color: #3D59AB;
     font-weight: bold;
 }
 
 hgroup {
+	position: relative;
     margin-bottom: 20px;
 	padding: 0 10px 0 10px;
+	z-index: 0;
+}
+
+.fade-trigger {
+	z-index: 5;
 }
 
 .grid-border-wrapper {
@@ -518,15 +579,6 @@ hgroup {
 
 /* MAIN CONTENT */
 
-#content-container {
-	display: inline-block;
-}
-
-#content {
-	display: inline-block;
-	max-width: 960px;
-}
-
 .frame {
     background-color: white;
     margin: 0 0 20px 0;
@@ -538,111 +590,39 @@ hgroup {
     -webkit-box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+	display: inline-block;
 }
 
-
-.full {
+.frame > article {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	padding: 0;
 }
 
-.full img {
-    width: 600px;
+.frame img {
+	width: 100%;
 }
-
-.full p {
-    margin: 0; 
-
-}
-
-.frame p {
-    text-align: left;
-    color: #3D59AB;
-	padding: 10px;
-	max-width: 580px;
-}
-
 
 /* BIO PAGE */
 
-.overlay {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    width: 500px;
-    text-align: left;
-	background-color: none;
-}
-
-.full-img {
-    overflow:hidden;
-}
-
 /* Cases Gallery Page */
 
-.quarter-container {
-    width: 640px;
-    margin: 0;
-    padding: 0;
-    height: 510px;
+/* Diary */
+
+.diary-list {
+	margin: 0;
+	padding: 0;
 }
 
-.quarter-container li {
-    list-style-type: none;
-    float: left;
-    width: 280px;
-    height: 215px;
-    margin-right: 20px;
+.diary-list > ul > li {
+	margin: 0;
+	padding: 0;
 }
 
-.quarter-img {
-    width: 280px;
-    margin: 0 0 10px 0;
-    overflow:hidden;
-    height: 175px;
-
-}
-
-.quarter-container li img {
-    width: 100%;
-}
-
-.quarter-container li p {
-    width: 100%;
-    margin: 0;
-}
-
-/* Journal */
-
-.full-container {
-    width: 620px;
-    margin: 0;
-    padding: 0 20px 0 0;
-    height: 490px;
-}
-
-.blog-quarter-img {
-    width: 280px;
-    margin: 0;
-    overflow:hidden;
-    height: 215px;
-
-}
-
-.blog-post {
-	padding: 10px;
-}
-
-.overlay-blog {
-    position: absolute;
-	bottom: 54px;
-    left: 20px;
-    width: 560px;
-    text-align: left;
-    color: #3D59AB;
-}
-
-.blog-post-img {
-    position: relative;
-    z-index: 1;
+.diary-img > p {
+	padding: 0;
+	margin: 0;
 }
 
 .block-link {
@@ -654,90 +634,48 @@ hgroup {
     z-index: 2;
 }
 
-.blog-post-ex {
+.diary-ex {
+	height: 215px;
+}
+
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 10px;
-    width: 260px;
-    height: 215px;
-    z-index: 0;
-    background-color: white;
+	right: 0;
+	bottom: 0;
+    text-align: left;
+	background-color: white;
+	padding: 10px;
 }
 
-.blog-post-ex time {
-	float: right;
-	margin-top: 6px;
+.overlay > p {
+	margin: 10px 10px 0 10px;
+	padding: 0;
 }
 
-.blog-post-ex p {
-	padding-top: 10px;
-}
-
-.blog-post img {
-	width: 25%;
-	float: left;
-	margin-right: 10px;
-    width: 280px;
-    margin: 0 0 10px 0;
-    overflow:hidden;
-    height: 175px;
-}
-
-h1.title {
-    margin: 0 5px 0 0;
-    padding: 0;
+.diary-post-title {
     font-size: 18px;
+	float: left;
+	margin: 10px 0 0 10px;
 }
 
-.post-title, .post-title:visited {
-    color: #404040;
-    text-decoration: none;
-}
-
-.post-title time p, .post time, .post time p, h1.title {
-    display: inline;
-}
-
-.blog-post p {
-	text-align: left;
-}
-
-.post time p {
-    margin-top: 0;
-}
-
-nav.post_nav {
-    margin: 0;
-    padding: 0;
-}
-
-nav.post_nav ul {
-    margin: 0;
-    padding: 0;
-}
-
-article.post {
-    margin: 0 60px 50px 0;
-}
-
-article.post img {
-    float: right;
-    margin: 0 0 5% 5%;
-    border: 3px solid #989898;
-    max-width: 35%;
+.diary-post-date {
+	float: left;
+	margin: 15px 0 0 10px;
 }
 
 a.disabled {
     color: #F8F8F8;
 }
 
-.post_nav {
-	float: none;
+.diary-nav {
+	margin: 0 0 20px 10px;
+	padding: 0;
 }
 
-.post_nav a {
-	border: none;
+.diary-nav > ul {
+	float: right;
 }
 
 
@@ -747,45 +685,8 @@ footer {
 	padding: 0 10px 0 10px;
 }
 
-footer a {
-    color: #404040;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #3D59AB;
-}
-
-footer a:visited {
-    color: #404040;
-    text-decoration: none;
-}
-
-footer ul {
+footer > ul {
     float: right;
     margin: 0;
     padding: 0;
 }
-
-footer li {
-    list-style-type: none;
-    display: inline;
-    margin: 0 -8px 0 0;
-    padding: 0 6px 0 0;
-}
-
-footer li a, footer li a:visited {
-    margin: 0 -4px 0 10px;
-    padding: 4px 8px 0 4px;
-    border: 1px solid #F8F8F8;
-}
-
-footer li a:hover {
-    color: #080808;
-}
-
-footer li a.selected {
-    color: #3D59AB;
-    font-weight: bold;
-}
-

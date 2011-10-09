@@ -1,0 +1,25 @@
+{% extends "projects.j2" %}
+{% from "macros.j2" import render_diary_nav with context %}
+
+{% block content %}
+<div class="frame grid_8p fade-trigger">
+<article class="clearfix">
+<img alt="{{ resource.meta.title }}" src="/media/img/{{ resource.meta.title }}.jpg" />
+<div class="overlay fade-hover">
+	<div class="clearfix">
+		<h1 class="diary-post-title">{{ resource.meta.title }}</h1>
+		<time class="diary-post-date" datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
+		{{ resource.meta.created.strftime('%B %d, %Y') }}
+		</time>
+	</div>
+{% filter markdown|typogrify -%}
+{% mark post -%}
+{% block post -%}
+{%- endblock %}
+{%- endmark %}
+{%- endfilter %}
+</div>
+</article>
+</div>
+{{ render_diary_nav(resource) }}
+{% endblock %}
