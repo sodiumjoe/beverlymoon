@@ -1,8 +1,10 @@
 {% extends "base.j2" %}
 {% block content %}
 
-<div class="full frame grid_8p">
+<div class="frame grid_8p">
+{% filter markdown|typogrify -%}
 {% block inside_content %}{% endblock %}
+{%- endfilter %}
 </div>
 
 {% endblock content %}

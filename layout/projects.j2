@@ -2,12 +2,13 @@
 {% from "macros.j2" import render_projects_menu with context  %}
 
 {% block sub_nav %}
-<hgroup class="clearfix">
+<div class="head-group clearfix">
 {{ render_projects_menu() }}
-</hgroup>
+</div>
 {% endblock %}
 
 {% block content %}
-{% block inside_content %}
-{% endblock %}
+{% filter markdown|typogrify -%}
+{% block inside_content %}{% endblock %}
+{%- endfilter %}
 {% endblock %}

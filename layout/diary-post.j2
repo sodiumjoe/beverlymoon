@@ -2,24 +2,35 @@
 {% from "macros.j2" import render_diary_nav with context %}
 
 {% block content %}
-<div class="frame grid_8p fade-trigger">
+<div class="frame grid_8p">
 <article class="clearfix">
-<img alt="{{ resource.meta.title }}" src="/media/img/{{ resource.meta.title }}.jpg" />
-<div class="overlay fade-hover">
-	<div class="clearfix">
-		<h1 class="diary-post-title">{{ resource.meta.title }}</h1>
-		<time class="diary-post-date" datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
-		{{ resource.meta.created.strftime('%B %d, %Y') }}
+		<h1 class="diary-post-title">{{ resource.meta.title }}</h1> <time class="diary-post-date" datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">{{ resource.meta.created.strftime('%B %d, %Y') }}
 		</time>
-	</div>
+<a class="close" href="{{ content_url(resource.node.url) }}"><span class="block-link"></span></a>
+<img alt="{{ resource.meta.title }}" src="/media/img/diary/{{ resource.slug }}.jpg" />
 {% filter markdown|typogrify -%}
 {% mark post -%}
 {% block post -%}
 {%- endblock %}
 {%- endmark %}
 {%- endfilter %}
-</div>
 </article>
 </div>
-{{ render_diary_nav(resource) }}
+{% endblock %}
+
+{% block nav_left %}
+<div class="nav-prev">
+{% if resource.next_by_time %}{% if resource.next_by_time.slug != "1" %}
+<a href="/projects/contact-case/diary/{{ resource.next_by_time.slug }}"><span class="block-link"></span></a>
+{% endif %}
+{% endif %}
+</div>
+{% endblock %}
+
+{% block nav_right %}
+<div class="nav-next">
+{% if resource.prev_by_time.slug %}
+<a href="/projects/contact-case/diary/{{ resource.prev_by_time.slug }}"><span class="block-link"></span></a>
+{% endif %}
+</div>
 {% endblock %}

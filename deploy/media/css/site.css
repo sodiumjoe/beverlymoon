@@ -1,5 +1,3 @@
-/*! normalize.css 2011-07-31T11:33 UTC · http://github.com/necolas/normalize.css */
-
 /* =============================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -65,6 +63,7 @@ html {
     -webkit-text-size-adjust: 100%; /* 4 */
     -ms-text-size-adjust: 100%; /* 4 */
     color: #404040;
+	height: 100%;
 }
 
 /*
@@ -80,7 +79,7 @@ button,
 input,
 select,
 textarea {
-    font-family: 'georgia', serif;
+	font-family: 'Muli', sans-serif;
 }
 
 p {
@@ -93,11 +92,13 @@ p {
    ========================================================================== */
 
 a {
-    color: #00e;
+    color: #000099;
+	text-decoration: none;
 }
 
 a:visited {
     color: #551a8b;
+    color: #000099;
 }
 
 /*
@@ -171,7 +172,7 @@ code,
 kbd,
 samp {
     font-family: monospace, monospace;
-    _font-family: 'courier new', monospace;
+    font-family: 'courier new', monospace;
     font-size: 1em;
 }
 
@@ -433,7 +434,48 @@ table {
     border-spacing: 0;
 }
 
-/* END NORMALIZE.CSS */
+/* `Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+
+/* http://sonspring.com/journal/clearing-floats */
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
+
+.clearfix:before,
+.clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*
+  The following zoom:1 rule is specifically for IE6 + IE7.
+  Move to separate stylesheet if invalid CSS is a problem.
+*/
+
+.clearfix {
+  zoom: 1;
+}
+
+/* =============================================================================
+   END NORMALIZE.CSS
+   ========================================================================== */
 
 body {
     background-color: #F8F8F8;
@@ -441,46 +483,56 @@ body {
 
 #wrapper {
 	margin: auto;
-	padding: 0px 60px;
+	padding: 0 60px;
 	text-align: center;
 }
 
 #main {
 	text-align: left;
-	margin: 30px auto;
+	margin: 60px auto;
 	display: inline-block;
-	max-width: 960px;
+	max-width: 880px;
 }
 
-@media (max-width: 1096px) {
-	#main {
-		max-width: 640px;
-	}
+#content {
+	margin: auto;
+	position: relative;
 }
 
-@media (max-width: 775px) {
-	#main {
-		max-width: 320px;
-	}
-}
-/*
-
-@media (min-width: 320px) {
-	#main {
-		min-width: 775px;
-	}
+header {
+	margin: auto;
+	width: 640px;
 }
 
-@media (min-width: 640px) {
-	#main {
-		min-width: 1096px;
-	}
+header > div {
+	display: block;
+	position: relative;
+    margin-bottom: 20px;
+	padding: 0 10px 0 10px;
+	z-index: 0;
 }
 
-	*/
-/* Avoid flash of unstyled content */
+.grid_4p,
+.grid_8p {
+	display:inline;
+	float: left;
+	position: relative;
+	margin: 0 10px 20px 10px;
+}
 
-.js .fade-hover { display: none; }
+.grid_4p {
+	width:280px;
+}
+
+.grid_8p {
+	width: 600px;
+}
+
+.clean-link, .clean-link:visited {
+    color: #000099;
+	text-decoration: none;
+}
+
 
 
 /* NAV ELEMENTS */ 
@@ -499,7 +551,7 @@ body {
     margin: 0;
 }
 
-.sub-nav {
+.sub-nav, .bottom-nav {
 	float: right;
 }
 
@@ -511,55 +563,80 @@ nav > ul {
 nav > ul > li {
     list-style-type: none;
     display: inline;
-    margin: 0 0px 0 0;
-    padding: 0 0px 0 0;
-}
-
-.menu-container {
-	margin: 0 -10px 0 0;
-	padding: 0 0 0 -10px;
+    margin: 0;
+    padding: 0;
 }
 
 .menu-container > li {
 	display: inline;
 }
 
+nav > ul > li > a:hover {
+    color: #000099;
+}
+
 .nav-item, .nav-item:visited, .nav-item-left, .nav-item-left:visited {
     text-decoration: none;
-    color: #404040;
+	color: #404040;
 }
 
 .nav-item, .nav-item:visited {
-    margin: -5px 3px -5px 3px;
-    padding: 5px 7px 5px 7px;
-}
-
-.nav-item:hover {
-    color: #3D59AB;
-}
-
-.current-project {
-	float: left;
-}
-
-nav > ul > li > a:hover, .current-project > a:hover {
-    color: #3D59AB;
+	margin: -5px 3px -5px 3px;
+	padding: 5px 7px 5px 7px;
 }
 
 .selected, .selected:visited {
-    color: #3D59AB;
-    font-weight: bold;
+    color: #000099;
+	font-weight: bold;
 }
 
-hgroup {
-	position: relative;
-    margin-bottom: 20px;
-	padding: 0 10px 0 10px;
-	z-index: 0;
+.nav-item:hover {
+    color: #000099;
 }
 
-.fade-trigger {
-	z-index: 5;
+.nav-next {
+	width: 90px;
+	height: 500px;
+	position: absolute;
+	right: -80px;
+}
+
+.nav-next > a > span {
+	background: url('/media/img/next_black.png') center no-repeat;
+}
+
+.nav-next > a > span:hover {
+	background: url('/media/img/next_blue.png') center no-repeat;
+}
+
+.nav-prev > a > span {
+	background: url('/media/img/previous_black.png') center no-repeat;
+}
+
+.nav-prev > a > span:hover {
+	background: url('/media/img/previous_blue.png') center no-repeat;
+}
+
+.nav-prev {
+	width: 90px;
+	height: 500px;
+	position: absolute;
+	left: -80px;
+}
+
+.nav-next > a, .nav-prev > a {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+.nav-next > a > img, .nav-prev > a > img {
+	position: absolute;
+	height: 55px;
+	top: 50%;
+	margin: -23px 35px 0 35px;
+	opacity: 0;
+	z-index: 10;
 }
 
 .grid-border-wrapper {
@@ -577,11 +654,11 @@ hgroup {
     margin: 0 0 20px 0;
 }
 
+
 /* MAIN CONTENT */
 
 .frame {
     background-color: white;
-    margin: 0 0 20px 0;
     padding: 10px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -597,32 +674,42 @@ hgroup {
 	width: 100%;
 	overflow: hidden;
 	position: relative;
-	padding: 0;
 }
 
 .frame img {
 	width: 100%;
+	display: block;
 }
 
-/* BIO PAGE */
+.overlay-project {
+	position: absolute;
+	width: 370px;
+	top: 12px;
+	right: 10px;
+	padding: 30px;
+}
 
-/* Cases Gallery Page */
+.overlay-about {
+	position: absolute;
+	text-align: right;
+	width: 300px;
+	top: 10px;
+	right: 10px;
+	padding: 20px 30px;
+}
 
-/* Diary */
 
-.diary-list {
+/* Projects page */
+
+.diary-list, .gallery-list, .info-list {
+	max-width: 640px;
 	margin: 0;
 	padding: 0;
 }
 
-.diary-list > ul > li {
+.diary-list > ul > li, .gallery-list > ul > li {
 	margin: 0;
 	padding: 0;
-}
-
-.diary-img > p {
-	padding: 0;
-	margin: 0;
 }
 
 .block-link {
@@ -634,59 +721,118 @@ hgroup {
     z-index: 2;
 }
 
-.diary-ex {
-	height: 215px;
+.fade-trigger {
+	z-index: 5;
+	opacity: 1;
+	-webkit-transition: opacity .1s linear;
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-	right: 0;
-	bottom: 0;
-    text-align: left;
-	background-color: white;
-	padding: 10px;
+.fade-trigger:hover {
+	opacity: .6;
 }
 
-.overlay > p {
-	margin: 10px 10px 0 10px;
-	padding: 0;
-}
-
-.diary-post-title {
-    font-size: 18px;
+.diary-post-title, .info-post-title {
+    font-size: 12px;
 	float: left;
-	margin: 10px 0 0 10px;
+	margin: 0 0 10px 0;
+	font-weight: normal;
 }
 
 .diary-post-date {
-	float: left;
-	margin: 15px 0 0 10px;
+	margin: 0 0 0 10px;
+	border-left: 1px solid #888888;
+	padding-left: 10px;
 }
 
 a.disabled {
     color: #F8F8F8;
 }
 
-.diary-nav {
-	margin: 0 0 20px 10px;
-	padding: 0;
-}
+/* CLOSE BUTTON */
 
-.diary-nav > ul {
+.close {
 	float: right;
+	padding: 0 0 10px 0;
+	height: 15px;
+	width: 15px;
+	position: relative;
 }
 
+.close:visited {
+    color: #404040;
+}
+
+.close span {
+	background: url('/media/img/x.png') 0 0 no-repeat;
+}
+
+.close span:hover {
+	background: url('/media/img/x_blue_thick.png') 0 0 no-repeat;
+}
 
 /* FOOTER */
 
 footer {
-	padding: 0 10px 0 10px;
+	width: 640px;
+	margin: auto;
 }
 
 footer > ul {
     float: right;
     margin: 0;
-    padding: 0;
+	padding: 0 10px 0 10px;
+}
+
+.top, .top:visited {
+	text-decoration: none;
+	font-weight: normal;
+	color: #404040;
+	padding: 0 10px;
+}
+
+.top:hover {
+    color: #000099;
+}
+
+/* MEDIA QUERIES */
+
+
+@media (max-width: 775px) {
+	header, footer {
+		max-width: 320px;
+	}
+
+	#main {
+		max-width: 320px;
+	}
+
+	.grid_8p {
+		width: 280px;
+	}
+	
+	.overlay-project, .overlay-about {
+		position: relative;
+		width: 100%;
+		padding: 0 10px;
+		text-align: left;
+	}
+
+	.selected, .selected:visited {
+		font-weight: normal;
+	}
+	
+	.nav-item, .nav-item:visited {
+		margin: -5px 0 -5px 0;
+		padding: 5px 2px 5px 2px;
+	}
+
+	.menu-container {
+		margin: 0;
+		padding: 0 0 0 -10px;
+	}
+
+	.nav-next, .nav-prev {
+		height: 240px;
+	}
+
 }

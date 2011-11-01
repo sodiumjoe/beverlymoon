@@ -1,0 +1,13 @@
+{% extends "projects.j2" %}
+{% from "macros.j2" import render_info with context  %}
+{% block content %}
+
+<ul class="info-list clearfix">
+{% for res in resource.node.walk_resources_grouped_by_info()|reverse() %}
+<li class="grid_4p frame fade-trigger">
+{{ render_info(res, "") }}
+</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

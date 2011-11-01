@@ -3,11 +3,16 @@
 {% block content %}
 
 <ul class="diary-list clearfix">
-{% for res in resource.node.walk_resources_sorted_by_time()|reverse() %}
+{% for res in resource.node.walk_resources_grouped_by_diary()|reverse() %}
 <li class="grid_4p frame fade-trigger">
 {{ render_excerpt(res, "") }}
 </li>
 {% endfor %}
 </ul>
 
+{% endblock %}
+
+{% block return_top %}
+
+<a class="top" title="Back to the top of the page" href="#">&uarr; Back to the top of the page</a>
 {% endblock %}

@@ -1,0 +1,37 @@
+---
+title: Cases Gallery
+extends: projects.j2
+title_ending: "| Gallery"
+default_block: content
+---
+
+    <div class="frame grid_4p">
+        <div>
+            <img src="{{ media_url('img/Gallery_1.jpg') }}"/>
+        </div>
+    </div>
+    <div class="frame grid_4p">
+        <div>
+            <img src="{{ media_url('img/Gallery_2.jpg') }}"/>
+        </div>
+    </div>
+    <div class="frame grid_4p">
+        <div>
+            <img src="{{ media_url('img/Gallery_3.jpg') }}"/>
+        </div>
+    </div>
+    <div class="frame grid_4p">
+        <div>
+            <img src="{{ media_url('img/Gallery_4.jpg') }}"/>
+        </div>
+    </div>
+    <div class="frame grid_4p">
+        <div>
+            <img src="{{ media_url('img/Gallery_5.jpg') }}"/>
+        </div>
+    </div>
+    <div class="frame grid_4p">
+        <div>
+            <img src="{{ media_url('img/Gallery_6.jpg') }}"/>
+        </div>
+    </div>

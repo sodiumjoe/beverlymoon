@@ -1,0 +1,15 @@
+{% extends "base.j2" %}
+{% block sub_nav %}
+<div class="head-group clearfix">
+<nav class="sub-nav"><ul class="menu-container"><li><a class="nav-item" href="/projects/contact-case">2011 | Contact Lens Case</a></li></ul></nav>
+</div>
+{% endblock %}
+{% block content %}
+
+<div class="frame grid_8p">
+{% filter markdown|typogrify -%}
+{% block inside_content %}{% endblock %}
+{%- endfilter %}
+</div>
+
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends "projects.j2" %}
+{% from "macros.j2" import render_gallery_nav with context %}
+
+{% block content %}
+<div class="frame grid_8p">
+<a class="close" href="{{ content_url(resource.node.url) }}"><span class="block-link"></span></a>
+<article class="clearfix">
+<img title="{{ resource.meta.title }}" src="/media/img/gallery/{{ resource.name|truncate(-5, true, "") }}.jpg" />
+</article>
+</div>
+{% endblock %}
+
+{% block nav_left %}
+<div class="nav-prev">
+{% if resource.prev_by_name %}
+<a title="Previous" href="/projects/contact-case/gallery/{{ resource.prev_by_name.slug }}"><span class="block-link"></span></a>
+{% endif %}
+</div>
+{% endblock %}
+
+{% block nav_right %}
+<div class="nav-next">
+{% if resource.next_by_name.slug != "beginning" %}
+<a title="Next" href="/projects/contact-case/gallery/{{ resource.next_by_name.slug }}"><span class="block-link"></span></a>
+{% endif %}
+</div>
+{% endblock %}

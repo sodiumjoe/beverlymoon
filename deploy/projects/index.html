@@ -5,8 +5,9 @@
 <meta charset="utf-8" />
 <meta name="description" content="">
 <meta name="author" content="Joe Moon">
-<link rel="stylesheet" href="/media/css/site.css">
-<link rel="stylesheet" href="/media/css/grid.css">
+<link rel="stylesheet" href="/media/css/site.min.css">
+<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
 <!-- Place favicon.ico & apple-touch-icon.png
         in the root of your domain and delete these references -->
 <link rel="shortcut icon" href="/beverlymoon.png">
@@ -14,38 +15,66 @@
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
         </script>
         <![endif]-->
+<!--[if lte IE 9]>
+<style media="screen" type="text/css">
+#main {
+	max-width: 640px;
+}
+</style>
+<![endif]-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26670461-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </head>
     <body>
 		<div id="wrapper">
 			<div id="main">
                 <header>
-                    <hgroup class="clearfix">
+                    <div class="head-group clearfix">
                     <a id="logo-link" href="/"><img id="logo" alt="Moon" src="/media/img/logo.png" /></a>
                     <nav class="top-nav">
                                                                     <ul class="clearfix menu-container">
-<li><a class="nav-item" href="/projects">Projects</a></li></ul>
+<li><a class="nav-item selected" href="/projects">Projects</a></li><li><a class="nav-item" href="/portfolio">Portfolio</a></li><li><a class="nav-item" href="/about">About</a></li></ul>
                     </nav>
-                    </hgroup>
+                    </div>
 					<div class="grid-border-wrapper">
                     <hr class="grid-border" />
 					</div>
-										                </header>
+					<div class="head-group clearfix">
+<nav class="sub-nav"><ul class="menu-container"><li><a class="nav-item" href="/projects/contact-case">2011 | Contact Lens Case</a></li></ul></nav>
+</div>
+                </header>
 				<div id="content" class="clearfix">
-								<div class="frame grid_8p">
+												
+<div class="frame grid_8p">
+<img title="Pretty mundane objects" src="/media/img/Pretty_Mundane.jpg"/>
 
-<p>I want to take the mundane objects that surround us and make them beautiful. I'm starting with <a href="/projects/contact-case">this contact lens case</a>.</p>
-</div>				</div>
+<div class="overlay-project">
+
+<h3 id="pretty_mundane_objects">Pretty Mundane&nbsp;Objects</h3>
+<p>This project aims to make the everyday beautiful. To take a second look at the mundane objects that we use daily and re-think our interactions with&nbsp;them.</p>
+<p>It’s not about designing new things, but refining the experiences and relationships between us and our objects. It&#8217;s about looking at products that are essential to our routine, but that most designers haven&#8217;t bothered to&nbsp;observe. </p>
+<p>The project is to make the mundane&nbsp;pretty.</p>
+<p>My objective is to redesign one object per&nbsp;year.</p>
+<p>Click for the first of many: <a class="clean-link" href="/projects/contact-case">2011 | Contact Lens Case</a>.</p>
+</div></div>
+
+												</div>
+                <footer class="clearfix">
 				<div class="grid-border-wrapper">
 				<hr class="grid-border" />
 				</div>
-                <footer class="clearfix">
-								<ul class="menu-container clearfix">
-<li><a class="nav-item" href="/about">About</a></li>
-<li><a class="nav-item" href="mailto:mail@beverlymoon.com">Contact</a></li>
-</ul>
-                </footer>
+								                </footer>
 			</div> 		</div>         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js?ver=1.4.0"></script>
-        <script type="text/javascript" src="/media/js/beverlymoon.js"></script>
-		<script type="text/javascript" src="/media/js/jquery.cycle.lite.js"></script>
     </body>
 </html>

@@ -5,11 +5,6 @@ $(document).ready(function(){
 		fx: 'fade'
 	});
 
-    $(".fade-trigger").hover(function () {
-        $(this).find("div.fade-hover").fadeTo("fast", .8); // This should set the opacity to 100% on hover
-    },function(){
-        $(this).find("div.fade-hover").fadeTo("fast", 0); // This should set the opacity to 100% on hover
-    });
     
     $(function(){
 

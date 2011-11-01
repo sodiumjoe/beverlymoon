@@ -1,0 +1,5 @@
+extends: gallery-post.j2
+default_block: post
+listable: true
+title_ending: " | Projects | Contact Lens Case | Gallery"
+level: gallery

@@ -1,0 +1,34 @@
+{% extends "projects.j2" %}
+{% from "macros.j2" import render_info_nav with context %}
+
+{% block content %}
+<div class="frame grid_8p clearfix">
+<article class="clearfix">
+<h1 class="diary-post-title">{{ resource.meta.title }}</h1>
+<a class="close" href="{{ content_url(resource.node.url) }}"><span class="block-link"></span></a>
+<img alt="{{ resource.meta.title }}" src="/media/img/info/{{ resource.slug }}.jpg" />
+{% filter markdown|typogrify -%}
+{% mark post -%}
+{% block post -%}
+{%- endblock %}
+{%- endmark %}
+{%- endfilter %}
+</article>
+</div>
+{% endblock %}
+
+{% block nav_left %}
+<div class="nav-prev">
+{% if resource.next_by_time %}
+<a href="/projects/contact-case/info/{{ resource.next_by_time.slug }}"><span class="block-link"></span></a>
+{% endif %}
+</div>
+{% endblock %}
+
+{% block nav_right %}
+<div class="nav-next">
+{% if resource.prev_by_time.slug != "6" %}
+<a href="/projects/contact-case/info/{{ resource.prev_by_time.slug }}"><span class="block-link"></span></a>
+{% endif %}
+</div>
+{% endblock %}
