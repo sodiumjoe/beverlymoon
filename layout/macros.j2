@@ -64,7 +64,7 @@ href="{{ content_url(item.url) }}">
 		<span class="block-link"></span>
 	</a>
 	<article class="clearfix info-ex">
-			<h1 class="info-post-title">{{ res.meta.title }}</h1>
+			<h3 class="info-post-title">{{ res.meta.title }}</h3>
 			<img class="fade-hover" alt="{{ res.meta.title }}" src="/media/img/info/{{ res.slug }}.jpg" />
 	</article>
 {% endmacro %}
@@ -75,7 +75,7 @@ href="{{ content_url(item.url) }}">
 		<span class="block-link"></span>
 	</a>
 	<article class="clearfix diary-ex">
-				<h1 class="diary-post-title">{{ res.meta.title }}</h1>
+				<h3 class="diary-post-title">{{ res.meta.title }}</h3>
 					<time class="diary-post-date" datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
 						{{ res.meta.created.strftime('%B %d, %Y') }}
 					</time>

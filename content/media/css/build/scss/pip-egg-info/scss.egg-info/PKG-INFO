@@ -1,0 +1,20 @@
+Metadata-Version: 1.0
+Name: scss
+Version: 0.8.70
+Summary: UNKNOWN
+Home-page: http://github.com/klen/python-scss
+Author: Kirill Klenov
+Author-email: horneds@gmail.com
+License: GNU LGPL
+Description: UNKNOWN
+Keywords: css sass scss precompiler
+Platform: Any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: Russian
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)
+Classifier: Programming Language :: Python
+Classifier: Environment :: Console
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: Text Processing :: Markup

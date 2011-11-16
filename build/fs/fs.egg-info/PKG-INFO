@@ -1,0 +1,20 @@
+Metadata-Version: 1.0
+Name: fs
+Version: 0.4.0
+Summary: Filesystem abstraction
+Home-page: http://code.google.com/p/pyfilesystem/
+Author: Will McGugan
+Author-email: will@willmcgugan.com
+License: BSD
+Download-URL: http://code.google.com/p/pyfilesystem/downloads/list
+Description: Pyfilesystem is a module that provides a simplified common interface to many types of filesystem. Filesystems exposed via Pyfilesystem can also be served over the network, or 'mounted' on the native filesystem.
+        
+        Even if you only need to work with file and directories on the local hard-drive, Pyfilesystem can simplify your code and make it more robust -- with the added advantage that you can change where the files are located by changing a single line of code.
+        
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: System :: Filesystems

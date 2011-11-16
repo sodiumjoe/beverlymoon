@@ -1,0 +1,130 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+$.fn.cycle	.\content\media\js\jquery.cycle.lite.js	/^$.fn.cycle = function(options) {$/;"	f
+$.fn.cycle	.\deploy\media\js\jquery.cycle.lite.js	/^$.fn.cycle = function(options) {$/;"	f
+$.fn.cycle.custom	.\content\media\js\jquery.cycle.lite.js	/^$.fn.cycle.custom = function(curr, next, opts, cb) {$/;"	f
+$.fn.cycle.custom	.\deploy\media\js\jquery.cycle.lite.js	/^$.fn.cycle.custom = function(curr, next, opts, cb) {$/;"	f
+$.fn.cycle.custom.fn	.\content\media\js\jquery.cycle.lite.js	/^    var fn = function() {$n.animate(opts.animIn, opts.speedIn, opts.easeIn, cb)};$/;"	f
+$.fn.cycle.custom.fn	.\deploy\media\js\jquery.cycle.lite.js	/^    var fn = function() {$n.animate(opts.animIn, opts.speedIn, opts.easeIn, cb)};$/;"	f
+$.fn.cycle.defaults.animIn	.\content\media\js\jquery.cycle.lite.js	/^	animIn:        {},$/;"	p
+$.fn.cycle.defaults.animIn	.\deploy\media\js\jquery.cycle.lite.js	/^	animIn:        {},$/;"	p
+$.fn.cycle.transitions.fade	.\content\media\js\jquery.cycle.lite.js	/^    fade: function($cont, $slides, opts) {$/;"	m
+$.fn.cycle.transitions.fade	.\deploy\media\js\jquery.cycle.lite.js	/^    fade: function($cont, $slides, opts) {$/;"	m
+$.fn.cycle.transitions.fadeout	.\content\media\js\jquery.cycle.lite.js	/^    fadeout: function($cont, $slides, opts) {$/;"	m
+$.fn.cycle.transitions.fadeout	.\deploy\media\js\jquery.cycle.lite.js	/^    fadeout: function($cont, $slides, opts) {$/;"	m
+$.fn.cycle.ver	.\content\media\js\jquery.cycle.lite.js	/^$.fn.cycle.ver = function() { return ver; };$/;"	f
+$.fn.cycle.ver	.\deploy\media\js\jquery.cycle.lite.js	/^$.fn.cycle.ver = function() { return ver; };$/;"	f
+1.html	.\content\projects\contact-case\gallery\1.html	1;"	F
+1.html	.\deploy\projects\contact-case\gallery\1.html	1;"	F
+2.html	.\content\projects\contact-case\gallery\2.html	1;"	F
+2.html	.\deploy\projects\contact-case\gallery\2.html	1;"	F
+3.html	.\content\projects\contact-case\gallery\3.html	1;"	F
+3.html	.\deploy\projects\contact-case\gallery\3.html	1;"	F
+4.html	.\content\projects\contact-case\gallery\4.html	1;"	F
+4.html	.\deploy\projects\contact-case\gallery\4.html	1;"	F
+404.html	.\content\404.html	1;"	F
+404.html	.\deploy\404.html	1;"	F
+5.html	.\content\projects\contact-case\gallery\5.html	1;"	F
+5.html	.\deploy\projects\contact-case\gallery\5.html	1;"	F
+6.html	.\content\projects\contact-case\gallery\6.html	1;"	F
+6.html	.\deploy\projects\contact-case\gallery\6.html	1;"	F
+about.html	.\content\about.html	1;"	F
+about.html	.\deploy\about.html	1;"	F
+advance	.\content\media\js\jquery.cycle.lite.js	/^function advance(els, opts, val) {$/;"	f
+advance	.\deploy\media\js\jquery.cycle.lite.js	/^function advance(els, opts, val) {$/;"	f
+beginning.html	.\content\projects\contact-case\diary\beginning.html	1;"	F
+beginning.html	.\deploy\projects\contact-case\diary\beginning.html	1;"	F
+beverlymoon.js	.\content\media\js\beverlymoon.js	1;"	F
+beverlymoon.js	.\deploy\media\js\beverlymoon.js	1;"	F
+colors.html	.\content\projects\contact-case\diary\colors.html	1;"	F
+colors.html	.\content\projects\contact-case\info\colors.html	1;"	F
+colors.html	.\deploy\projects\contact-case\diary\colors.html	1;"	F
+colors.html	.\deploy\projects\contact-case\info\colors.html	1;"	F
+concepts.html	.\content\projects\contact-case\diary\concepts.html	1;"	F
+concepts.html	.\deploy\projects\contact-case\diary\concepts.html	1;"	F
+corian.html	.\content\projects\contact-case\diary\corian.html	1;"	F
+corian.html	.\deploy\projects\contact-case\diary\corian.html	1;"	F
+dimensions.html	.\content\projects\contact-case\info\dimensions.html	1;"	F
+dimensions.html	.\deploy\projects\contact-case\info\dimensions.html	1;"	F
+felt.html	.\content\projects\contact-case\diary\felt.html	1;"	F
+felt.html	.\deploy\projects\contact-case\diary\felt.html	1;"	F
+final.html	.\content\projects\contact-case\diary\final.html	1;"	F
+final.html	.\deploy\projects\contact-case\diary\final.html	1;"	F
+first-article.html	.\content\projects\contact-case\diary\first-article.html	1;"	F
+first-article.html	.\deploy\projects\contact-case\diary\first-article.html	1;"	F
+first-samples.html	.\content\projects\contact-case\diary\first-samples.html	1;"	F
+first-samples.html	.\deploy\projects\contact-case\diary\first-samples.html	1;"	F
+friends.html	.\content\projects\contact-case\diary\friends.html	1;"	F
+friends.html	.\deploy\projects\contact-case\diary\friends.html	1;"	F
+go	.\content\media\js\jquery.cycle.lite.js	/^function go(els, opts, manual, fwd) {$/;"	f
+go	.\deploy\media\js\jquery.cycle.lite.js	/^function go(els, opts, manual, fwd) {$/;"	f
+go.after	.\content\media\js\jquery.cycle.lite.js	/^        var after = function() {$/;"	f
+go.after	.\deploy\media\js\jquery.cycle.lite.js	/^        var after = function() {$/;"	f
+index.html	.\content\index.html	1;"	F
+index.html	.\content\projects\contact-case\diary\index.html	1;"	F
+index.html	.\content\projects\contact-case\gallery\index.html	1;"	F
+index.html	.\content\projects\contact-case\index.html	1;"	F
+index.html	.\content\projects\contact-case\info\index.html	1;"	F
+index.html	.\content\projects\index.html	1;"	F
+index.html	.\deploy\index.html	1;"	F
+index.html	.\deploy\projects\contact-case\diary\index.html	1;"	F
+index.html	.\deploy\projects\contact-case\gallery\index.html	1;"	F
+index.html	.\deploy\projects\contact-case\index.html	1;"	F
+index.html	.\deploy\projects\contact-case\info\index.html	1;"	F
+index.html	.\deploy\projects\index.html	1;"	F
+joe.html	.\content\projects\contact-case\diary\joe.html	1;"	F
+joe.html	.\deploy\projects\contact-case\diary\joe.html	1;"	F
+jquery.cycle.lite.js	.\content\media\js\jquery.cycle.lite.js	1;"	F
+jquery.cycle.lite.js	.\deploy\media\js\jquery.cycle.lite.js	1;"	F
+kickstarter.html	.\content\projects\contact-case\diary\kickstarter.html	1;"	F
+kickstarter.html	.\content\projects\contact-case\kickstarter.html	1;"	F
+kickstarter.html	.\deploy\projects\contact-case\diary\kickstarter.html	1;"	F
+kickstarter.html	.\deploy\projects\contact-case\kickstarter.html	1;"	F
+launched.html	.\content\projects\contact-case\diary\launched.html	1;"	F
+launched.html	.\deploy\projects\contact-case\diary\launched.html	1;"	F
+manufacturing.html	.\content\projects\contact-case\info\manufacturing.html	1;"	F
+manufacturing.html	.\deploy\projects\contact-case\info\manufacturing.html	1;"	F
+material.html	.\content\projects\contact-case\info\material.html	1;"	F
+material.html	.\deploy\projects\contact-case\info\material.html	1;"	F
+o-ring.html	.\content\projects\contact-case\diary\o-ring.html	1;"	F
+o-ring.html	.\deploy\projects\contact-case\diary\o-ring.html	1;"	F
+opts.animIn.opacity	.\content\media\js\jquery.cycle.lite.js	/^		opts.animIn = { opacity: 1 };$/;"	p
+opts.animIn.opacity	.\deploy\media\js\jquery.cycle.lite.js	/^		opts.animIn = { opacity: 1 };$/;"	p
+opts.animOut.opacity	.\content\media\js\jquery.cycle.lite.js	/^		opts.animOut = { opacity: 0 };$/;"	p
+opts.animOut.opacity	.\deploy\media\js\jquery.cycle.lite.js	/^		opts.animOut = { opacity: 0 };$/;"	p
+opts.cssAfter.display	.\content\media\js\jquery.cycle.lite.js	/^		opts.cssAfter  = { display: 'none' };$/;"	p
+opts.cssAfter.display	.\content\media\js\jquery.cycle.lite.js	/^		opts.cssAfter  = { display: 'none', zIndex: 0 };$/;"	p
+opts.cssAfter.display	.\deploy\media\js\jquery.cycle.lite.js	/^		opts.cssAfter  = { display: 'none' };$/;"	p
+opts.cssAfter.display	.\deploy\media\js\jquery.cycle.lite.js	/^		opts.cssAfter  = { display: 'none', zIndex: 0 };$/;"	p
+opts.cssAfter.zIndex	.\content\media\js\jquery.cycle.lite.js	/^		opts.cssAfter  = { display: 'none', zIndex: 0 };$/;"	p
+opts.cssAfter.zIndex	.\deploy\media\js\jquery.cycle.lite.js	/^		opts.cssAfter  = { display: 'none', zIndex: 0 };$/;"	p
+opts.cssBefore.display	.\content\media\js\jquery.cycle.lite.js	/^		opts.cssBefore = { opacity: 0, display: 'block' };$/;"	p
+opts.cssBefore.display	.\content\media\js\jquery.cycle.lite.js	/^		opts.cssBefore = { opacity: 1, display: 'block', zIndex: 1 };$/;"	p
+opts.cssBefore.display	.\deploy\media\js\jquery.cycle.lite.js	/^		opts.cssBefore = { opacity: 0, display: 'block' };$/;"	p
+opts.cssBefore.display	.\deploy\media\js\jquery.cycle.lite.js	/^		opts.cssBefore = { opacity: 1, display: 'block', zIndex: 1 };$/;"	p
+opts.cssBefore.opacity	.\content\media\js\jquery.cycle.lite.js	/^		opts.cssBefore = { opacity: 0, display: 'block' };$/;"	p
+opts.cssBefore.opacity	.\content\media\js\jquery.cycle.lite.js	/^		opts.cssBefore = { opacity: 1, display: 'block', zIndex: 1 };$/;"	p
+opts.cssBefore.opacity	.\deploy\media\js\jquery.cycle.lite.js	/^		opts.cssBefore = { opacity: 0, display: 'block' };$/;"	p
+opts.cssBefore.opacity	.\deploy\media\js\jquery.cycle.lite.js	/^		opts.cssBefore = { opacity: 1, display: 'block', zIndex: 1 };$/;"	p
+opts.cssBefore.zIndex	.\content\media\js\jquery.cycle.lite.js	/^		opts.cssBefore = { opacity: 1, display: 'block', zIndex: 1 };$/;"	p
+opts.cssBefore.zIndex	.\deploy\media\js\jquery.cycle.lite.js	/^		opts.cssBefore = { opacity: 1, display: 'block', zIndex: 1 };$/;"	p
+packaging.html	.\content\projects\contact-case\diary\packaging.html	1;"	F
+packaging.html	.\deploy\projects\contact-case\diary\packaging.html	1;"	F
+photoshoot.html	.\content\projects\contact-case\diary\photoshoot.html	1;"	F
+photoshoot.html	.\deploy\projects\contact-case\diary\photoshoot.html	1;"	F
+portfolio.html	.\content\portfolio.html	1;"	F
+portfolio.html	.\deploy\portfolio.html	1;"	F
+review.html	.\content\projects\contact-case\diary\review.html	1;"	F
+review.html	.\deploy\projects\contact-case\diary\review.html	1;"	F
+second-sheet.html	.\content\projects\contact-case\diary\second-sheet.html	1;"	F
+second-sheet.html	.\deploy\projects\contact-case\diary\second-sheet.html	1;"	F
+spm.html	.\content\projects\contact-case\diary\spm.html	1;"	F
+spm.html	.\deploy\projects\contact-case\diary\spm.html	1;"	F
+video.html	.\content\projects\contact-case\diary\video.html	1;"	F
+video.html	.\deploy\projects\contact-case\diary\video.html	1;"	F
+website.html	.\content\projects\contact-case\diary\website.html	1;"	F
+website.html	.\deploy\projects\contact-case\diary\website.html	1;"	F

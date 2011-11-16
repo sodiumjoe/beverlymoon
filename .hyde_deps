@@ -1,3 +1,4 @@
+404.html: [full-page.j2, macros.j2, base.j2]
 about.html: [full-page.j2, macros.j2, base.j2]
 index.html: [full-page.j2, macros.j2, base.j2]
 media\css\.hyde_deps: []
@@ -88,7 +89,16 @@ projects\contact-case\deploy\projects\contact-case\index.html: []
 projects\contact-case\deploy\projects\contact-case\pdx.html: []
 projects\contact-case\deploy\projects\index.html: []
 projects\contact-case\deploy\what-next.html: []
-projects\contact-case\diary\atom.xml: [atom.j2, macros.j2]
+projects\contact-case\diary\atom.xml: [projects\contact-case\diary\first-article.html,
+  projects\contact-case\diary\spm.html, projects\contact-case\diary\joe.html, diary-post.j2,
+  projects\contact-case\diary\second-sheet.html, macros.j2, projects\contact-case\diary\photoshoot.html,
+  projects\contact-case\diary\first-samples.html, projects\contact-case\diary\beginning.html,
+  base.j2, atom.j2, projects\contact-case\diary\final.html, projects\contact-case\diary\concepts.html,
+  projects\contact-case\diary\colors.html, projects\contact-case\diary\o-ring.html,
+  projects\contact-case\diary\felt.html, projects\contact-case\diary\corian.html,
+  projects\contact-case\diary\friends.html, projects\contact-case\diary\kickstarter.html,
+  projects.j2, projects\contact-case\diary\website.html, projects\contact-case\diary\review.html,
+  projects\contact-case\diary\packaging.html]
 projects\contact-case\diary\beginning.html: [macros.j2, diary-post.j2, base.j2, projects.j2]
 projects\contact-case\diary\colors.html: [macros.j2, diary-post.j2, base.j2, projects.j2]
 projects\contact-case\diary\concepts.html: [macros.j2, diary-post.j2, base.j2, projects.j2]
@@ -101,28 +111,23 @@ projects\contact-case\diary\first-article.html: [macros.j2, diary-post.j2, base.
 projects\contact-case\diary\first-samples.html: [macros.j2, diary-post.j2, base.j2,
   projects.j2]
 projects\contact-case\diary\friends.html: [macros.j2, diary-post.j2, base.j2, projects.j2]
-projects\contact-case\diary\index.html: [projects\contact-case\diary\first-article.html,
-  projects\contact-case\diary\spm.html, projects\contact-case\diary\joe.html, diary-post.j2,
-  diary-listing.j2, projects\contact-case\diary\second-sheet.html, macros.j2, projects\contact-case\diary\photoshoot.html,
-  projects\contact-case\diary\first-samples.html, projects\contact-case\diary\beginning.html,
-  base.j2, projects\contact-case\diary\final.html, projects\contact-case\diary\concepts.html,
-  projects\contact-case\diary\colors.html, projects\contact-case\diary\packaging.html,
-  projects\contact-case\diary\felt.html, projects\contact-case\diary\corian.html,
-  projects\contact-case\diary\friends.html, projects\contact-case\diary\kickstarter.html,
-  projects.j2, projects\contact-case\diary\website.html, projects\contact-case\diary\review.html,
-  projects\contact-case\diary\o-ring.html]
+projects\contact-case\diary\index.html: [diary-listing.j2, macros.j2, projects.j2,
+  base.j2]
 projects\contact-case\diary\joe.html: [macros.j2, diary-post.j2, base.j2, projects.j2]
 projects\contact-case\diary\kickstarter.html: [macros.j2, diary-post.j2, base.j2,
   projects.j2]
+projects\contact-case\diary\launched.html: [macros.j2, diary-post.j2, base.j2, projects.j2]
 projects\contact-case\diary\new.html: [macros.j2, diary-post.j2, base.j2, projects.j2]
 projects\contact-case\diary\o-ring.html: [macros.j2, diary-post.j2, base.j2, projects.j2]
 projects\contact-case\diary\packaging.html: [macros.j2, diary-post.j2, base.j2, projects.j2]
 projects\contact-case\diary\photoshoot.html: [macros.j2, diary-post.j2, base.j2, projects.j2]
 projects\contact-case\diary\review.html: [macros.j2, diary-post.j2, base.j2, projects.j2]
+projects\contact-case\diary\rss.xml: [rss.j2, macros.j2]
 projects\contact-case\diary\second-sheet.html: [macros.j2, diary-post.j2, base.j2,
   projects.j2]
 projects\contact-case\diary\smp.html: [macros.j2, diary-post.j2, base.j2, projects.j2]
 projects\contact-case\diary\spm.html: [macros.j2, diary-post.j2, base.j2, projects.j2]
+projects\contact-case\diary\video.html: [macros.j2, diary-post.j2, base.j2, projects.j2]
 projects\contact-case\diary\website.html: [macros.j2, diary-post.j2, base.j2, projects.j2]
 projects\contact-case\gallery.html: [macros.j2, projects.j2, base.j2]
 projects\contact-case\gallery\1.html: [gallery-post.j2, projects.j2, base.j2, macros.j2]
@@ -136,10 +141,7 @@ projects\contact-case\gallery\Gallery1.html: [gallery-post.j2, projects.j2, base
   macros.j2]
 projects\contact-case\gallery\Gallery_1.html: [gallery-post.j2, projects.j2, base.j2,
   macros.j2]
-projects\contact-case\gallery\index.html: [gallery-post.j2, projects\contact-case\gallery\1.html,
-  projects\contact-case\gallery\3.html, gallery-listing.j2, projects\contact-case\gallery\2.html,
-  projects\contact-case\gallery\5.html, projects\contact-case\gallery\4.html, projects.j2,
-  base.j2, macros.j2, projects\contact-case\gallery\6.html]
+projects\contact-case\gallery\index.html: [macros.j2, projects.j2, base.j2, gallery-listing.j2]
 projects\contact-case\index.html: [macros.j2, projects.j2, base.j2]
 projects\contact-case\info.html: [macros.j2, projects.j2, base.j2]
 projects\contact-case\info\1.html: [gallery-post.j2, projects.j2, base.j2, macros.j2]
@@ -148,10 +150,7 @@ projects\contact-case\info\3.html: [gallery-post.j2, projects.j2, base.j2, macro
 projects\contact-case\info\4.html: [gallery-post.j2, projects.j2, base.j2, macros.j2]
 projects\contact-case\info\colors.html: [macros.j2, projects.j2, base.j2, info-post.j2]
 projects\contact-case\info\dimensions.html: [macros.j2, projects.j2, base.j2, info-post.j2]
-projects\contact-case\info\index.html: [projects\contact-case\info\dimensions.html,
-  projects\contact-case\info\colors.html, info-post.j2, projects\contact-case\info\manufacturing.html,
-  projects.j2, base.j2, projects\contact-case\info\material.html, info-listing.j2,
-  macros.j2]
+projects\contact-case\info\index.html: [info-listing.j2, macros.j2, projects.j2, base.j2]
 projects\contact-case\info\manufacturing.html: [macros.j2, projects.j2, base.j2, info-post.j2]
 projects\contact-case\info\material.html: [macros.j2, projects.j2, base.j2, info-post.j2]
 projects\contact-case\kickstarter.html: [macros.j2, projects.j2, base.j2]

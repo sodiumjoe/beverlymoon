@@ -1,11 +1,15 @@
 {% extends "projects.j2" %}
 {% from "macros.j2" import render_gallery_nav with context %}
 
+{% block desc %}
+MOON Contact Case Lens Gallery - {{ resource.meta.title }}
+{% endblock %}
+
 {% block content %}
 <div class="frame grid_8p">
 <a class="close" href="{{ content_url(resource.node.url) }}"><span class="block-link"></span></a>
 <article class="clearfix">
-<img title="{{ resource.meta.title }}" src="/media/img/gallery/{{ resource.name|truncate(-5, true, "") }}.jpg" />
+<img alt="{{ resource.meta.title }}" src="/media/img/gallery/{{ resource.name|truncate(-5, true, "") }}.jpg" />
 </article>
 </div>
 {% endblock %}

@@ -1,5 +1,5 @@
 extends: info-post.j2
 default_block: post
 listable: true
-title_ending: " | Projects | Contact Lens Case | Info"
+title_ending: "MOON | Projects | Contact Lens Case | Info | "
 level: info

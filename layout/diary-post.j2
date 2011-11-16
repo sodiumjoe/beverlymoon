@@ -1,10 +1,17 @@
 {% extends "projects.j2" %}
 {% from "macros.j2" import render_diary_nav with context %}
+{% block subscribe %}
+<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/MoonCase" />
+{% endblock %}
+
+{% block desc %}
+MOON Contact Case Lens Project Diary Entry for {{ resource.meta.created.strftime('%B %d, %Y') }} - {{ resource.meta.title }}
+{% endblock %}
 
 {% block content %}
 <div class="frame grid_8p">
 <article class="clearfix">
-		<h1 class="diary-post-title">{{ resource.meta.title }}</h1> <time class="diary-post-date" datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">{{ resource.meta.created.strftime('%B %d, %Y') }}
+		<h3 class="diary-post-title">{{ resource.meta.title }}</h3> <time class="diary-post-date" datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}">{{ resource.meta.created.strftime('%B %d, %Y') }}
 		</time>
 <a class="close" href="{{ content_url(resource.node.url) }}"><span class="block-link"></span></a>
 <img alt="{{ resource.meta.title }}" src="/media/img/diary/{{ resource.slug }}.jpg" />
@@ -33,4 +40,8 @@
 <a href="/projects/contact-case/diary/{{ resource.prev_by_time.slug }}"><span class="block-link"></span></a>
 {% endif %}
 </div>
+{% endblock %}
+
+{% block rss %}
+<a class="rss" title="Click to subcribe in RSS" href="http://feeds.feedburner.com/MoonCase">Subscribe</a>
 {% endblock %}

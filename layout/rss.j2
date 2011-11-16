@@ -1,0 +1,30 @@
+{% from "macros.j2" import render_excerpt, render_post with context %}
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<atom:link href="http://beverlymoon.com/projects/contact-case/diary/rss.xml" rel="self" type="application/rss+xml" />
+		<title>
+			{% block title %}{{ resource.meta.title|default(feed_title)|replace("&reg;", "&#174;") }}{% endblock %} | beverlymoon.com
+		</title>
+		<description>MOON Case Project Diary</description>
+		<link>http://beverlymoon.com/projects/contact-case/diary/</link>
+		<pubDate>{{ time_now.strftime('%a, %d %b %Y %X %Z') }}PST</pubDate>
+		<lastBuildDate>{{ time_now.strftime('%a, %d %b %Y %X %Z') }}PST</lastBuildDate>
+
+		{% for res in resource.node.walk_resources_sorted_by_time() %}
+			<item>
+				<title>{{ res.meta.title|replace("&reg;", "&#174;")|replace("&nbsp;", "&#160;")  }} | MOON Case Project Diary</title>
+				<link>http://beverlymoon.com/projects/contact-case/diary/{{ res.slug }}</link>
+				<pubDate>{{ res.meta.created.strftime('%a, %d %b %Y %X %Z') }}PST</pubDate>
+				<guid>http://beverlymoon.com/projects/contact-case/diary/{{ res.slug }}</guid>
+
+		{% refer to res.url as article -%}
+				<description>
+by Beverly Moon
+					<img alt="{{ res.meta.title|replace("&reg;", "&#174;")|replace("&nbsp;", "&#160;") }}" src="http://beverlymoon.com/media/img/diary/{{ res.slug }}.jpg" />
+					{{ article.post|markdown|typogrify|replace("&reg;", "&#174;")|replace("&nbsp;", "&#160;") }}
+				</description>
+			</item>
+		{% endfor %}
+	</channel>
+</rss>

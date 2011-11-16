@@ -1,10 +1,12 @@
 ---
-title: About 
 extends: full-page.j2
-title_ending: "| About"
-default_block: inside_content
+title: "MOON | About"
+title_ending: ""
+default_block: ""
+description: About Beverly Moon
 ---
 
+{% block inside_content %}
 <img alt="Portrait" src="{{ media_url('img/BIO_1.jpg') }}"/>
 
 <div class="overlay-about">
@@ -20,3 +22,10 @@ Always curious, I'm looking for refreshing new projects and like-minded individu
 Don’t be shy. <a title="e-mail" href="mailto:mail@beverlymoon.com">Say "Hello."</a>
 
 </div>
+{% endblock %}
+
+{% block rss %}
+<div class="hyde">
+smelted with <a href="https://github.com/hyde/hyde" title="Hyde Static Site Generator">Hyde</a>
+</div>
+{% endblock %}

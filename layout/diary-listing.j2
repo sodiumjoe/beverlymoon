@@ -1,5 +1,8 @@
 {% extends "projects.j2" %}
 {% from "macros.j2" import render_excerpt with context  %}
+{% block subscribe %}
+<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/MoonCase" />
+{% endblock %}
 {% block content %}
 
 <ul class="diary-list clearfix">
@@ -13,6 +16,8 @@
 {% endblock %}
 
 {% block return_top %}
-
 <a class="top" title="Back to the top of the page" href="#">&uarr; Back to the top of the page</a>
+{% endblock %}
+{% block rss %}
+<a class="rss" title="Click to subcribe in RSS" href="http://feeds.feedburner.com/MoonCase">Subscribe</a>
 {% endblock %}

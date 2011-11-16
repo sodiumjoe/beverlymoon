@@ -1,6 +1,10 @@
 {% extends "projects.j2" %}
 {% from "macros.j2" import render_info_nav with context %}
 
+{% block desc %}
+MOON Contact Case Lens - {{ resource.meta.title }}
+{% endblock %}
+
 {% block content %}
 <div class="frame grid_8p clearfix">
 <article class="clearfix">

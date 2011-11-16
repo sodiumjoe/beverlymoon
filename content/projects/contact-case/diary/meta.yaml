@@ -1,5 +1,5 @@
 extends: diary-post.j2
 default_block: post
 listable: true
-title_ending: " | Projects | Contact Lens Case | Diary "
+title_ending: "MOON | Projects | Contact Lens Case | Diary | " 
 level: diary
