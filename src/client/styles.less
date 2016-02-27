@@ -1,0 +1,199 @@
+@white: #fff;
+@gray-base:              #000;
+@gray-darker:            lighten(@gray-base, 13.5%); // #222
+@gray-dark:              lighten(@gray-base, 20%);   // #333
+@gray:                   lighten(@gray-base, 33.5%); // #555
+@gray-light:             lighten(@gray-base, 46.7%); // #777
+@gray-lighter:           lighten(@gray-base, 93.5%); // #eee
+
+@padding: 10px;
+@gutter-width: @padding * 3;
+
+@sans: 'Helvetica Neue';
+@serif: Garamond;
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background-image: url(https://lh3.googleusercontent.com/wkrTAXB7BBKu8Couhi4POK2j-nLGIAIMRHohjyvdSdSja0sp9mG8JhRU2xFESmBeS9CMCHgfJ0XAKXdzEeXM-HHQMHylvVuLQEdcklqIlGVQ-KpxlFv-U5u6bt0daPUJZ28Yia18fFfwayN_iXHQmAc-I2dOjCN5q4hg5wuaQDSD3OSloKRS05e3Yl0Drcbj4SW64mACWjtCqW4wJnQaBgN-5tT9KBHfL2BsOwF0l6DCt1x3ZE7KnbL3xUIo6AREQJAtb8DmxpbIBPd9CoLI_NFWpfDe2OeNTse2rDAOxZcdhRTmF8jNXy0a_K88VdO0KO022H32BIvvzesBwwq66wkqtscyWdxaobkXLrUMDvMnaz5OYNd9usw1emlfUk96JzOhMExv6CGFUQnzVOJt43rj49eoYI3b-gTLC1rmakt_bmZN968QBNiLjMCFxMgPI3ir7kSAi0RWEj9RJt6YuWy_2NTBqWeUZ4X7VR-YsPVb7H-CSrDlJtJes8MBc8XLmXu-OiLe5yOhI6GAh5v4mN_L8NDQO9R222JTY2Yv8KJqdJpmPoQArfumgcNQTk1634a07Q=w1712-h1138-no);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  color: @gray-dark;
+}
+
+a {
+  text-decoration: none;
+}
+
+#nav {
+  padding: @padding @gutter-width;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#logo {
+  color: @gray-dark;
+  font-size: 48px;
+  display: flex;
+  flex-direction: column;
+  .first {
+    letter-spacing: -2px;
+  }
+  .last {
+    letter-spacing: 14px;
+    padding-left: 10px;
+    margin-top: -11px;
+    font-family: @sans;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+}
+
+#nav-links {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  padding: @gutter-width 0 0;
+  margin: 0;
+
+  list-style-type: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-family: @sans;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1em;
+
+  li {
+
+    padding: 0;
+
+    a {
+      color: @gray;
+      padding: @padding;
+    }
+
+    a.button {
+      padding: @padding @padding * 2;
+      margin-left: @padding;
+      border: 2px solid @gray;
+      border-radius: 300px;
+      &:hover {
+        background-color: @gray;
+        color: @white;
+      }
+    }
+  }
+
+}
+
+.jumbo {
+  font-family: @sans;
+  font-size: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: @gutter-width * 2 0 @gutter-width * 15;
+}
+
+footer, section {
+  padding: @gutter-width * 4 0 0;
+  width: 100%;
+  background-color: @white;
+  text-align: center;
+}
+
+h2 {
+  font-family: @serif;
+  font-size: 32px;
+  line-height: 1.2em;
+  text-transform: none;
+  letter-spacing: 0px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h3 {
+  font-family: @serif;
+  font-size: 24px;
+  line-height: 1.2em;
+  text-transform: none;
+  letter-spacing: 0px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+h4 {
+  font-family: @sans;
+  font-size: 22px;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+article p {
+  font-size: 18px;
+  line-height: 1.6em;
+  letter-spacing: 0px;
+  font-weight: 400;
+  font-style: normal;
+  color: rgba(26,26,26,.7);
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  p {
+    font-family: @serif;
+  }
+}
+
+.card {
+  margin: 0 @gutter-width / 2;
+  img {
+    width: 400px;
+  }
+}
+
+.social {
+  margin: 0;
+  padding: @gutter-width 0;
+  width: 100%;
+  background-color: @gray-dark;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  list-style-type: none;
+  li {
+    padding: @padding;
+  }
+  a {
+    color: @white;
+  }
+}
+
+footer address {
+  color: @gray-lighter;
+  padding: @gutter-width * 2 0;
+  background-color: @gray-darker;
+  font-family: @sans;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-style: normal;
+}
