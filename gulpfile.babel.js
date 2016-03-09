@@ -15,7 +15,7 @@ import webpack from 'webpack';
 import webpackConfig from './webpack.config.js';
 import config from './config.json';
 import express from 'express';
-import imageop from 'gulp-image-optimization';
+import ImageMin from 'imagemin';
 
 const SRC_DIR = path.join(__dirname, 'src');
 const CLIENT_SRC_DIR = path.join(SRC_DIR, 'client');
@@ -90,11 +90,16 @@ gulp.task('build:client:css', () => {
 });
 
 gulp.task('build:client:img', cb => {
-  gulp.src([path.join(CLIENT_SRC_DIR, 'img', '**/*.jpg')]).pipe(imageop({
+  new ImageMin()
+  .src(path.join(CLIENT_SRC_DIR, 'img', '**/*.{jpg,svg}'))
+  .use(ImageMin.jpegtran({
     optimizationLevel: 5,
     progressive: true,
     interlaced: true
-  })).pipe(gulp.dest(IMG_BUILD_DIR)).on('end', cb).on('error', cb);
+  }))
+  .use(ImageMin.svgo())
+  .dest(IMG_BUILD_DIR)
+  .run(cb);
 });
 
 

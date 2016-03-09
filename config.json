@@ -1,14 +1,12 @@
 {
   "dev": {
     "urls": {
-      "lodash": "//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js",
       "react": "//cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.js",
       "react_dom": "//cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.js"
     }
   },
   "prod": {
     "urls": {
-      "lodash": "//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js",
       "react": "//cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.min.js",
       "react_dom": "https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.min.js"
     }

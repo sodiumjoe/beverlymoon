@@ -1,6 +1,26 @@
 const path = require('path');
 const webpack = require('webpack');
 
+const env = process.env.NODE_ENV;
+
+const plugins = [
+  new webpack.optimize.OccurenceOrderPlugin(),
+  new webpack.NoErrorsPlugin()
+];
+
+const prodPlugins = [
+  new webpack.DefinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify('production')
+    }
+  }),
+  new webpack.optimize.UglifyJsPlugin({
+    compressor: {
+      warnings: false
+    }
+  })
+];
+
 module.exports = {
   devtool: 'source-map',
   resolve: {
@@ -14,24 +34,10 @@ module.exports = {
     filename: path.join('js', 'app.js'),
     publicPath: 'public'
   },
-  plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.NoErrorsPlugin()
-    // new webpack.DefinePlugin({
-    //   'process.env': {
-    //     'NODE_ENV': JSON.stringify('production')
-    //   }
-    // }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compressor: {
-    //     warnings: false
-    //   }
-    // })
-  ],
+  plugins: plugins.concat(env === 'production' ? prodPlugins : []),
   externals: {
     react: 'React',
-    'react-dom': 'ReactDOM',
-    lodash: '_'
+    'react-dom': 'ReactDOM'
   },
   module: {
     loaders: [{
