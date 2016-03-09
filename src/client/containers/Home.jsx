@@ -3,10 +3,10 @@ import React from 'react';
 const Home = () => {
   return (
     <div>
-      <div className='jumbo'>
+      <header className='jumbo'>
         <h3>Creative Director at Cinco Design</h3>
         <p>I draw circles and squares all day long.</p>
-      </div>
+      </header>
       <section>
         <h2>I&rsquo;m a senior product experience designer for Cinco Design.</h2>
         <p>My passion is for curating experiences through products and invoking beauty in everyday things.</p>

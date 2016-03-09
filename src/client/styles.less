@@ -17,13 +17,19 @@ html {
 }
 
 body {
-  background-image: url(https://lh3.googleusercontent.com/wkrTAXB7BBKu8Couhi4POK2j-nLGIAIMRHohjyvdSdSja0sp9mG8JhRU2xFESmBeS9CMCHgfJ0XAKXdzEeXM-HHQMHylvVuLQEdcklqIlGVQ-KpxlFv-U5u6bt0daPUJZ28Yia18fFfwayN_iXHQmAc-I2dOjCN5q4hg5wuaQDSD3OSloKRS05e3Yl0Drcbj4SW64mACWjtCqW4wJnQaBgN-5tT9KBHfL2BsOwF0l6DCt1x3ZE7KnbL3xUIo6AREQJAtb8DmxpbIBPd9CoLI_NFWpfDe2OeNTse2rDAOxZcdhRTmF8jNXy0a_K88VdO0KO022H32BIvvzesBwwq66wkqtscyWdxaobkXLrUMDvMnaz5OYNd9usw1emlfUk96JzOhMExv6CGFUQnzVOJt43rj49eoYI3b-gTLC1rmakt_bmZN968QBNiLjMCFxMgPI3ir7kSAi0RWEj9RJt6YuWy_2NTBqWeUZ4X7VR-YsPVb7H-CSrDlJtJes8MBc8XLmXu-OiLe5yOhI6GAh5v4mN_L8NDQO9R222JTY2Yv8KJqdJpmPoQArfumgcNQTk1634a07Q=w1712-h1138-no);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: transparent;
   padding: 0;
   margin: 0;
   color: @gray-dark;
+}
+
+.root {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-image: url(/img/img.jpg);
+}
+.root.about {
+  background-image: url(/img/snow.jpg);
 }
 
 a {
@@ -97,13 +103,16 @@ a {
 
 }
 
-.jumbo {
+header {
   font-family: @sans;
   font-size: 36px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: @gutter-width * 2 0 @gutter-width * 15;
+  padding: @gutter-width * 2 0 @gutter-width * 5;
+  &.jumbo {
+    padding: @gutter-width * 2 0 @gutter-width * 15;
+  }
 }
 
 footer, section {
@@ -113,14 +122,14 @@ footer, section {
   text-align: center;
 }
 
-h2 {
-  font-family: @serif;
-  font-size: 32px;
+header > h2 {
+  font-family: @sans;
+  font-size: 48px;
   line-height: 1.2em;
-  text-transform: none;
-  letter-spacing: 0px;
-  font-weight: 400;
+  letter-spacing: 12px;
+  font-weight: 600;
   font-style: normal;
+  text-transform: uppercase;
 }
 
 h3 {
@@ -143,13 +152,14 @@ h4 {
   font-style: normal;
 }
 
-article p {
+article p, section p {
   font-size: 18px;
   line-height: 1.6em;
   letter-spacing: 0px;
   font-weight: 400;
   font-style: normal;
   color: rgba(26,26,26,.7);
+  margin-bottom: 0;
 }
 
 .cards {
@@ -183,6 +193,9 @@ article p {
   }
   a {
     color: @white;
+  }
+  img {
+    width: @padding * 4;
   }
 }
 
