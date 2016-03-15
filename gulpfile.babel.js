@@ -1,11 +1,12 @@
 import _ from 'lodash';
-import autoprefixer from 'gulp-autoprefixer';
+import LessPluginCleanCSS from 'less-plugin-clean-css';
 import gulp from 'gulp';
 import gulpSequence from 'gulp-sequence';
 import gutil from 'gulp-util';
 import gulpJade from 'gulp-jade';
 import jade from 'jade';
 import less from 'gulp-less';
+import LessAutoprefix from 'less-plugin-autoprefix';
 import minifyHTML from 'gulp-minify-html';
 import mkdirp from 'mkdirp';
 import path from 'path';
@@ -36,11 +37,11 @@ gulp.task('serve', () => {
   app.get('*', (req, res) => {
     res.send(jade.compileFile(path.join(SERVER_SRC_DIR, 'index.jade'))(config.dev.urls));
   });
-  app.listen(3000, 'localhost', err => {
+  app.listen(9999, 'localhost', err => {
     if (err) {
       return console.log(err);
     }
-    console.log('Listening at http://localhost:3000');
+    console.log('Listening at http://localhost:9999');
   });
 });
 
@@ -76,16 +77,20 @@ gulp.task('build:client:js', cb => {
   });
 });
 
+const autoprefix = new LessAutoprefix({ browsers: ['last 2 versions'] });
+const cleanCSSPlugin = new LessPluginCleanCSS({advanced: true});
+
 gulp.task('build:client:css', () => {
   mkdirp.sync(path.join(CSS_BUILD_DIR));
-  return gulp.src(path.join(CLIENT_SRC_DIR, 'styles.less'))
-  .pipe(plumber())
-  .pipe(less({
-    paths: [path.join(__dirname, 'less', 'includes')]
-  }))
-  .pipe(autoprefixer({
-    browsers: ['last 2 versions']
-  }))
+  const l = less({
+    plugins: [autoprefix, cleanCSSPlugin]
+  });
+  l.on('error', e => {
+    gutil.log(e.message);
+    l.emit('end');
+  });
+  return gulp.src([path.join(CLIENT_SRC_DIR, 'styles.less')])
+  .pipe(l)
   .pipe(gulp.dest(CSS_BUILD_DIR));
 });
 
