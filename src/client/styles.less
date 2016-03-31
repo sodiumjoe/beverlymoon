@@ -180,15 +180,20 @@ h3 {
   align-items: center;
 
   #logo {
+
     svg {
       display: block;
       overflow: visible;
-      fill: #FFE5B4;
+      fill: @white;
       height: @padding * 2;
       @media (max-width: @screen-sm-min) {
         height: 18px;
       }
+      &.portfolio {
+        fill: @gray-darker;
+      }
     }
+
   }
 
   .nav-links {

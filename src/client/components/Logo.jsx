@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-const Logo = () => (
-  <svg x='0' y='0' viewBox='0 0 478 31'>
+const {
+  string
+} = PropTypes;
+
+const Logo = ({className}) => (
+  <svg className={className} x='0' y='0' viewBox='0 0 478 31'>
     <path d='M0,0h13.7c3.5,0,6.2,1,8,2.7c1.3,1.3,2,3,2,5v0.1c0,3.7-2.1,5.6-4.3,6.8c3.6,1.2,6,3.3,6,7.4v0.1 c0,5.4-4.5,8.4-11.3,8.4H0V0z M12.6,12.8c3.4,0,5.7-1.3,5.7-4.1V8.6c0-2.4-1.9-3.9-5.3-3.9H5.3v8.1H12.6z M14.1,25.7 c3.7,0,5.9-1.4,5.9-4.2v-0.1c0-2.6-2-4.1-6.3-4.1H5.3v8.4H14.1z'/>
     <path d='M42.3,0h22.6v4.8H47.7v7.9h15.3v4.8H47.7v8.2h17.4v4.8H42.3V0z'/>
     <path d='M79.7,0h5.9l9.2,23.4L104,0h5.8L97.1,30.7h-4.7L79.7,0z'/>
@@ -17,5 +21,9 @@ const Logo = () => (
     <path d='M428.5,3.9c-2.8-2.7-6.3-4.4-10.8-4.4c-9.4,0-15.6,7.2-15.6,15.7v0.1c0,4.3,1.4,8.3,4.3,11.1c2.8,2.8,6.4,4.5,11,4.5 c9.3,0,15.7-7.2,15.7-15.7v-0.1C433,10.7,431.4,6.7,428.5,3.9z'/>
   </svg>
 );
+
+Logo.propTypes = {
+  className: string
+};
 
 export default Logo;

@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => (
   <article>
     <header>
-      <figure><img src='/img/about.jpg'/></figure>
+      <figure><img src='/img/about3.jpg'/></figure>
     </header>
     <div className='content'>
       <h2>Industrial Designer at Heart<br/>Creative Director by Trade</h2>

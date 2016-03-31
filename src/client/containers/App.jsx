@@ -18,16 +18,18 @@ const SOCIAL_LINKS = [
   { href: 'mailto:beverly@beverlymoon.com', title: 'email', src: '/img/email.svg' }
 ];
 
-// const getClass = pathname => _.reject(pathname.split('/'), _.isEmpty)[0] || '';
+const getTopPath = pathname => _.reject(pathname.split('/'), _.isEmpty)[0] || '';
 
 const {
-  any
+  any,
+  object
 } = PropTypes;
 
 const App = createClass({
   render() {
-    const { children } = this.props;
+    const { location: { pathname }, children } = this.props;
     const { isActive } = this.state;
+    const topPath = getTopPath(pathname);
     const navLinks = _.map(NAV_LINKS, ({ href, title }) => <li key={title}><Link to={href} onClick={this.handleNavClick}>{title}</Link></li>);
     return (
       <div id='root' className={classNames({ 'menu-open': isActive })}>
@@ -38,14 +40,14 @@ const App = createClass({
         </nav>
         <nav id='nav'>
           <Link id='logo' to='/'>
-            <Logo />
+            <Logo className={topPath}/>
           </Link>
-          <ul className='nav-links'>
+          <ul className={classNames('nav-links', topPath)}>
             {navLinks}
           </ul>
           <button
             id='mobile-nav-button'
-            className={classNames({ 'is-active': isActive })}
+            className={classNames({ 'is-active': isActive }, topPath)}
             onClick={() => this.setState({ isActive: !isActive })}
           >
             <span>toggle menu</span>
@@ -72,7 +74,8 @@ const App = createClass({
     this.setState({ isActive: false });
   },
   propTypes: {
-    children: any
+    children: any,
+    location: object
   }
 });
 

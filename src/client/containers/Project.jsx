@@ -18,7 +18,7 @@ const Project = ({ params: { id } }) => {
   return (
     <article>
       <header>
-        <figure><img src='/img/portfolio.jpg'/></figure>
+        <figure><img src='/img/portfolio3.jpg'/></figure>
       </header>
       <div className='content'>
         <h2>{title}</h2>

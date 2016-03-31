@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Routes from './Routes';
+import getRoutes from './Routes';
 
 const renderApp = Routes => {
   require('./styles.less');
@@ -8,10 +8,9 @@ const renderApp = Routes => {
 };
 
 if (module.hot) {
-  module.hot.accept('./routes', () => {
-    const Routes = require('./routes').default;
-    renderApp(Routes);
+  module.hot.accept('./Routes', () => {
+    renderApp(getRoutes());
   });
 }
 
-renderApp(Routes);
+renderApp(getRoutes());
