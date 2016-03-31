@@ -1,8 +1,4 @@
 ## with bev
-* site map/layout
-  * home
-  * about
-  * portfolio
 * color palette
   * bg color
   * main text color
@@ -13,7 +9,7 @@
     * about
     * portfolio
 * fonts
-  * sans serif: proxima nova
+  + sans serif: proxima nova
   * serif: Garamond
     * https://www.typewolf.com/site-of-the-day/fonts/baskerville
     * https://www.typewolf.com/site-of-the-day/fonts/minister
@@ -23,14 +19,19 @@
 * page transitions ?
 
 ## tech
-* responsive
-  * menu
-  * stack columns
-* router routes
+* active link
+* server-side rendering
+  * static
+* 404
+  * nav links
 * css animations
   * page transitions
 * optimizations
   * gzip
   * inline svg
-  * static rendering
   * https://github.com/giakki/uncss
+* router routes
+  * active link
++ responsive
+  + menu
+  + stack columns

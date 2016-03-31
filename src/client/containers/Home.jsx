@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router';
+import Figure from '../components/Figure';
 
 const Home = () => (
   <article>
     <header>
-      <figure><img src='/img/portrait.jpg'/></figure>
+      <figure><img src='/img/home2.jpg'/></figure>
     </header>
     <div className='content'>
       <section className='lead'>
@@ -13,22 +13,18 @@ const Home = () => (
         <p>Always curious, I&rsquo;m looking for refreshing new projects and like-minded individuals to collaborate with.</p>
       </section>
       <main>
-        <article>
-          <Link to='/about'>
-            <img src='/img/snow.jpg'/>
-          </Link>
-          <h3>About</h3>
-          <p>Some stuff about me</p>
-          <Link to='/about'>Learn more &rarr;</Link>
-        </article>
-        <article>
-          <Link to='/portfolio'>
-            <img src='/img/snow.jpg'/>
-          </Link>
-          <h3>Portfolio</h3>
-          <p>Some cool shit i've done</p>
-          <Link to='/portfolio'>Learn more &rarr;</Link>
-        </article>
+        <Figure
+          link='/about'
+          img='/img/about.jpg'
+          title='About'
+          description='Some stuff about me'
+        />
+        <Figure
+          link='/portfolio'
+          img='/img/portfolio.jpg'
+          title='Portfolio'
+          description="Some cool shit i've done"
+        />
       </main>
     </div>
   </article>

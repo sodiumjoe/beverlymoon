@@ -1,21 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
-import About from './containers/About';
-import App from './containers/App';
-import Home from './containers/Home';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import Routes from './routes';
 
-browserHistory.listen(location => setTimeout(() => location.action !== 'POP' && window && window.scrollTo(0, 0)));
+const renderApp = Routes => {
+  require('./styles.less');
+  render(<Routes />, document.getElementById('app'));
+};
 
-render(
-  <Router history={browserHistory}>
-    <Route path='/' component={App}>
-      <IndexRoute component={Home} />
-      <Route path='about' component={About} />
-      {/*
-      <Route path='portfolio/:id' component={Portfolio} />
-      */}
-    </Route>
-  </Router>,
-  document.getElementById('app')
-);
+if (module.hot) {
+  module.hot.accept('./routes', () => {
+    const Routes = require('./routes').default;
+    renderApp(Routes);
+  });
+}
+
+renderApp(Routes);

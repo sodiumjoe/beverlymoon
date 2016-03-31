@@ -1,11 +1,20 @@
 const path = require('path');
 const webpack = require('webpack');
+const LessPluginAutoPrefix = require('less-plugin-autoprefix');
 
-const env = process.env.NODE_ENV;
+const {
+  env: {
+    NODE_ENV: env
+  }
+} = process;
 
-const plugins = [
-  new webpack.optimize.OccurenceOrderPlugin(),
-  new webpack.NoErrorsPlugin()
+const devPlugins = [
+  new webpack.DefinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify('dev')
+    }
+  }),
+  new webpack.HotModuleReplacementPlugin()
 ];
 
 const prodPlugins = [
@@ -21,23 +30,34 @@ const prodPlugins = [
   })
 ];
 
+const plugins = [
+  new webpack.optimize.OccurenceOrderPlugin(),
+  new webpack.NoErrorsPlugin()
+].concat(env === 'production' ? prodPlugins : devPlugins);
+
 module.exports = {
   devtool: 'source-map',
   resolve: {
     extensions: ['', '.jsx', '.js']
   },
-  entry: [
-    path.join(__dirname, 'src', 'client', 'index')
-  ],
+  entry: {
+    app: [
+      path.join(__dirname, 'src', 'client', 'index.jsx')
+    ]
+  },
   output: {
     path: path.join(__dirname, 'public'),
-    filename: path.join('js', 'app.js'),
-    publicPath: 'public'
+    filename: path.join('js', 'app.js')
   },
   plugins: plugins.concat(env === 'production' ? prodPlugins : []),
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM'
+  },
+  lessLoader: {
+    lessPlugins: [
+      new LessPluginAutoPrefix({ browsers: ['last 2 versions'] })
+    ]
   },
   module: {
     loaders: [{
@@ -47,6 +67,9 @@ module.exports = {
       query: {
         presets: ['react', 'es2015']
       }
+    }, {
+      test: /\.less$/,
+      loader: 'style-loader!css-loader!less-loader'
     }, {
       test: /\.jsx?$/,
       loader: 'eslint-loader',

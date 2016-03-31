@@ -4,7 +4,6 @@ import gulp from 'gulp';
 import gulpSequence from 'gulp-sequence';
 import gutil from 'gulp-util';
 import gulpJade from 'gulp-jade';
-import jade from 'jade';
 import less from 'gulp-less';
 import LessAutoprefix from 'less-plugin-autoprefix';
 import minifyHTML from 'gulp-minify-html';
@@ -14,8 +13,8 @@ import plumber from 'gulp-plumber';
 import rimraf from 'rimraf';
 import webpack from 'webpack';
 import webpackConfig from './webpack.config.js';
+import WebpackDevServer from 'webpack-dev-server';
 import config from './config.json';
-import express from 'express';
 import ImageMin from 'imagemin';
 
 const SRC_DIR = path.join(__dirname, 'src');
@@ -25,24 +24,50 @@ const SERVER_SRC_DIR = path.join(SRC_DIR, 'server');
 const BUILD_DIR = 'public';
 const CSS_BUILD_DIR = path.join(BUILD_DIR, 'css');
 const IMG_BUILD_DIR = path.join(BUILD_DIR, 'img');
+const HOST = '192.168.1.85';
+// const HOST = 'localhost';
+const PORT = 9999;
 
-const env = process.env.NODE_ENV || 'dev';
-const compiler = webpack(webpackConfig);
+const {
+  env: {
+    NODE_ENV: env = 'dev'
+  }
+} = process;
 
-gulp.task('dev', gulpSequence('clean', 'build:client', 'watch', 'serve'));
+const compiler = webpack(_.assign({}, webpackConfig, {
+  entry: {
+    app: [
+      `webpack-dev-server/client?http://${HOST}:${PORT}/`,
+      'webpack/hot/dev-server'
+    ].concat(webpackConfig.entry.app)
+  }
+}));
+
+gulp.task('dev', gulpSequence('clean', ['build:server:html', 'build:client:img', 'build:client:css'], 'serve'));
 
 gulp.task('serve', () => {
-  const app = express();
-  app.use(express.static('public'));
-  app.get('*', (req, res) => {
-    res.send(jade.compileFile(path.join(SERVER_SRC_DIR, 'index.jade'))(config.dev.urls));
+
+  const server = new WebpackDevServer(compiler, {
+    contentBase: 'public/',
+    hot: true,
+    historyApiFallback: true,
+    quiet: false,
+    noInfo: true,
+    lazy: false,
+    filename: 'app.js',
+    watchOptions: {
+      aggregateTimeout: 300,
+      poll: 1000
+    },
+    publicPath: '/',
+    stats: { colors: true }
   });
-  app.listen(9999, 'localhost', err => {
-    if (err) {
-      return console.log(err);
-    }
-    console.log('Listening at http://localhost:9999');
+
+  server.listen(PORT, HOST, err => {
+    if (err) { return console.log(err); }
+    console.log(`Listening at http://${HOST}:${PORT}`);
   });
+
 });
 
 gulp.task('build:prod', ['build:server:html', 'build:client']);
@@ -96,7 +121,7 @@ gulp.task('build:client:css', () => {
 
 gulp.task('build:client:img', cb => {
   new ImageMin()
-  .src(path.join(CLIENT_SRC_DIR, 'img', '**/*.{jpg,svg}'))
+  .src(path.join(CLIENT_SRC_DIR, 'img', '**/*.{jpg,svg,png}'))
   .use(ImageMin.jpegtran({
     optimizationLevel: 5,
     progressive: true,

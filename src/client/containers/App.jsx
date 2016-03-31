@@ -2,6 +2,7 @@ import _ from 'lodash';
 import classNames from 'classnames';
 import { Link } from 'react-router';
 import React, { createClass, PropTypes } from 'react';
+import Logo from '../components/Logo';
 
 const NAV_LINKS = [
   { href: '/', title: 'home' },
@@ -37,8 +38,7 @@ const App = createClass({
         </nav>
         <nav id='nav'>
           <Link id='logo' to='/'>
-            <span className='first'>Beverly</span>
-            <span className='last'>Moon</span>
+            <Logo />
           </Link>
           <ul className='nav-links'>
             {navLinks}
@@ -58,7 +58,10 @@ const App = createClass({
           </ul>
           <section className='contact'>
             <p>Copyright &copy; 2016 &bull; Beverly Moon</p>
-            <address>Portland, Oregon</address> &bull; (404) 386 2836
+            <span>
+              <address>Portland, Oregon</address>
+              &bull; (404) 386 2836
+            </span>
           </section>
         </footer>
       </div>
