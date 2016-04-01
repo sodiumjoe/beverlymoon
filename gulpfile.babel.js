@@ -6,7 +6,6 @@ import gutil from 'gulp-util';
 import gulpJade from 'gulp-jade';
 import less from 'gulp-less';
 import LessAutoprefix from 'less-plugin-autoprefix';
-import minifyHTML from 'gulp-minify-html';
 import mkdirp from 'mkdirp';
 import path from 'path';
 import plumber from 'gulp-plumber';
@@ -16,6 +15,9 @@ import webpackConfig from './webpack.config.js';
 import WebpackDevServer from 'webpack-dev-server';
 import config from './config.json';
 import ImageMin from 'imagemin';
+import generate from './src/static/generate';
+import getRoutes from './src/client/Routes.jsx';
+import { projects } from './src/client/data';
 
 const SRC_DIR = path.join(__dirname, 'src');
 const CLIENT_SRC_DIR = path.join(SRC_DIR, 'client');
@@ -24,17 +26,18 @@ const SERVER_SRC_DIR = path.join(SRC_DIR, 'server');
 const BUILD_DIR = 'public';
 const CSS_BUILD_DIR = path.join(BUILD_DIR, 'css');
 const IMG_BUILD_DIR = path.join(BUILD_DIR, 'img');
-const HOST = '192.168.1.85';
 // const HOST = 'localhost';
+// const HOST = '192.168.1.85';
+const HOST = '0.0.0.0';
 const PORT = 9999;
 
 const {
   env: {
-    NODE_ENV: env = 'dev'
-  }
+    NODE_ENV: env
+  } = { NODE_ENV: 'dev' }
 } = process;
 
-const compiler = webpack(_.assign({}, webpackConfig, {
+const devCompiler = webpack(_.assign({}, webpackConfig, {
   entry: {
     app: [
       `webpack-dev-server/client?http://${HOST}:${PORT}/`,
@@ -43,11 +46,13 @@ const compiler = webpack(_.assign({}, webpackConfig, {
   }
 }));
 
-gulp.task('dev', gulpSequence('clean', ['build:server:html', 'build:client:img', 'build:client:css'], 'serve'));
+const prodCompiler = webpack(webpackConfig);
+
+gulp.task('dev', gulpSequence('clean', ['dev:server:html', 'build:client:img', 'build:client:css'], 'serve'));
 
 gulp.task('serve', () => {
 
-  const server = new WebpackDevServer(compiler, {
+  const server = new WebpackDevServer(devCompiler, {
     contentBase: 'public/',
     hot: true,
     historyApiFallback: true,
@@ -70,12 +75,12 @@ gulp.task('serve', () => {
 
 });
 
-gulp.task('build:prod', ['build:server:html', 'build:client']);
+gulp.task('build:prod', ['build:client']);
 
 gulp.task('build:client', ['build:client:js', 'build:client:css', 'build:client:img']);
 
 gulp.task('build:client:js', cb => {
-  compiler.run((err, stats) => {
+  prodCompiler.run((err, stats) => {
     if (err) {
       throw new gutil.PluginError('webpack', err);
     }
@@ -133,17 +138,27 @@ gulp.task('build:client:img', cb => {
 });
 
 
-gulp.task('build:server:html', () => {
+gulp.task('dev:server:html', () => {
   return gulp.src(path.join(SERVER_SRC_DIR, 'index.jade'))
   .pipe(gulpJade({ locals: config[env].urls }))
   .pipe(plumber())
-  .pipe(minifyHTML())
   .pipe(gulp.dest(BUILD_DIR));
 });
 
 gulp.task('clean', cb => rimraf(path.join(BUILD_DIR, '**/*'), cb));
 
-gulp.task('watch', () => {
-  gulp.watch(path.join(CLIENT_SRC_DIR, '**/*.js*'), ['build:client:js']);
-  gulp.watch(path.join(CLIENT_SRC_DIR, '**/*.less'), ['build:client:css']);
+gulp.task('build:server:html', cb => {
+
+  const paths = [
+    '/',
+    '/about',
+    '/portfolio'
+  ].concat(_.map(projects, ({ id }) => `/portfolio/${id}`));
+
+  const routes = getRoutes('server')();
+
+  generate({ paths, routes, config }, cb);
+
 });
+
+gulp.task('build', gulpSequence('clean', ['build:server:html', 'build:client']));

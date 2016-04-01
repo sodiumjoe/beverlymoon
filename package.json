@@ -5,7 +5,8 @@
   "repository": "git@github.com:sodiumjoe/beverlymoon.com.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp dev"
+    "start": "gulp dev",
+    "build": "NODE_ENV=production gulp build"
   },
   "author": "Joe Moon <joe@xoxomoon.com>",
   "license": "ISC",

@@ -2,7 +2,7 @@ import _ from 'lodash';
 import classNames from 'classnames';
 import { Link } from 'react-router';
 import React, { createClass, PropTypes } from 'react';
-import Logo from '../components/Logo';
+import Logo from '../components/Logo.jsx';
 
 const NAV_LINKS = [
   { href: '/', title: 'home' },

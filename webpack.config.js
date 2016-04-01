@@ -5,7 +5,7 @@ const LessPluginAutoPrefix = require('less-plugin-autoprefix');
 const {
   env: {
     NODE_ENV: env
-  }
+  } = { NODE_ENV: 'dev' }
 } = process;
 
 const devPlugins = [
@@ -49,7 +49,7 @@ module.exports = {
     path: path.join(__dirname, 'public'),
     filename: path.join('js', 'app.js')
   },
-  plugins: plugins.concat(env === 'production' ? prodPlugins : []),
+  plugins: plugins,
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM'

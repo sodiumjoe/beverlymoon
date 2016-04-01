@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import React, { PropTypes } from 'react';
-import Figure from '../components/Figure';
+import Figure from '../components/Figure.jsx';
 import { projects } from '../data';
 
 const {

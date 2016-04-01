@@ -1,5 +1,5 @@
 import React from 'react';
-import Figure from '../components/Figure';
+import Figure from '../components/Figure.jsx';
 
 const Home = () => (
   <article>

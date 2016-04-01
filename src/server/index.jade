@@ -8,6 +8,8 @@ html(lang='en')
     link(href='/css/styles.css', rel='stylesheet')
   body
     #app
+      if app
+        != app
     script(src='#{react}')
     script(src='#{react_dom}')
     script(src='/js/app.js')
