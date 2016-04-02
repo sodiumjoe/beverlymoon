@@ -33,8 +33,8 @@ const PORT = 9999;
 
 const {
   env: {
-    NODE_ENV: env
-  } = { NODE_ENV: 'dev' }
+    NODE_ENV: env = 'dev'
+  }
 } = process;
 
 const devCompiler = webpack(_.assign({}, webpackConfig, {

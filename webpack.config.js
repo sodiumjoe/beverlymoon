@@ -4,8 +4,8 @@ const LessPluginAutoPrefix = require('less-plugin-autoprefix');
 
 const {
   env: {
-    NODE_ENV: env
-  } = { NODE_ENV: 'dev' }
+    NODE_ENV: env = 'dev'
+  }
 } = process;
 
 const devPlugins = [
