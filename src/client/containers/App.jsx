@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Link } from 'react-router';
 import React, { createClass, PropTypes } from 'react';
 import Logo from '../components/Logo.jsx';
+import NavLink from '../components/NavLink.jsx';
 
 const NAV_LINKS = [
   { href: '/', title: 'home' },
@@ -30,7 +31,9 @@ const App = createClass({
     const { location: { pathname }, children } = this.props;
     const { isActive } = this.state;
     const topPath = getTopPath(pathname);
-    const navLinks = _.map(NAV_LINKS, ({ href, title }) => <li key={title}><Link to={href} onClick={this.handleNavClick}>{title}</Link></li>);
+    const navLinks = _.map(NAV_LINKS, link =>
+     <li key={link.title}><NavLink {...link} onClick={this.handleNavClick}/></li>
+    );
     return (
       <div id='root' className={classNames({ 'menu-open': isActive })}>
         <nav id='mobile-nav'>

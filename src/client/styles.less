@@ -1,5 +1,13 @@
 @import (inline) '../../node_modules/normalize.css/normalize.css';
 
+.wf-loading {
+  opacity: 0;
+}
+
+.wf-active {
+  animation: fadein .3s ease-in;
+}
+
 html {
   overflow-y: scroll;
 }
@@ -21,6 +29,7 @@ body {
 @gray-dark:              lighten(@gray-base, 20%);   // #333
 @gray:                   lighten(@gray-base, 33.5%); // #555
 @gray-light:             lighten(@gray-base, 46.7%); // #777
+@gray-lighty:            lighten(@gray-base, 70%); // #777
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
 // type
@@ -150,6 +159,10 @@ h3 {
   .nav-links li a {
     color: @white;
     display: block;
+    &.active {
+      color: @gray-darker;
+      background-color: @white;
+    }
   }
 }
 
@@ -204,9 +217,13 @@ h3 {
     li > a {
       color: @gray-darker;
       padding: @padding;
+      &.active {
+        font-weight: bold;
+      }
     }
     li:last-child > a {
-      padding-right: @gutter-width;
+      margin-right: @gutter-width - @padding;
+      padding: @padding;
     }
   }
 
@@ -294,6 +311,39 @@ h3 {
 
 }
 
+figure {
+  .placeholder-container {
+
+    position: relative;
+    overflow: hidden;
+
+    img {
+      background-color: @gray-lighter;
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      z-index: 0;
+    }
+
+    .placeholder {
+      position: relative;
+      z-index: 10;
+      background-color: @gray-lighter;
+      padding-top: 56.3%;
+      width: 2000px;
+      opacity: 0;
+      transition: opacity .3s ease-out;
+      &.header {
+        padding-top: 24.363898223715794%;
+      }
+      &.loading {
+        opacity: 1;
+      }
+    }
+  }
+}
+
 header {
   color: @gray-lighter;
   position: relative;
@@ -303,10 +353,6 @@ header {
   figure {
     margin: 0;
     width: 100%;
-
-    img {
-      width: 100%;
-    }
   }
 
   h1 {
@@ -354,13 +400,14 @@ main {
       padding: 0 @padding @gutter-width;
       width: 100%;
     }
+    .placeholder-container {
+      border: 1px solid @gray-lighty;
+    }
     img {
       width: 100%;
-      border: 2px solid @gray-darker;
-      border-radius: 3px;
     }
     a > img {
-      opacity: .7;
+      opacity: .8;
       transition: opacity .25s ease-in-out;
       @media (max-width: @screen-xs) {
         opacity: 1;
@@ -416,4 +463,14 @@ footer {
     }
   }
 
+}
+
+@keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }

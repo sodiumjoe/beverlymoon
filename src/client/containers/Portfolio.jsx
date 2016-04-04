@@ -1,28 +1,36 @@
 import _ from 'lodash';
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Figure from '../components/Figure.jsx';
+import Page from '../components/Page.jsx';
 import { projects } from '../data';
 
-const Portfolio = () => (
-  <article>
-    <header>
-    <figure><img src='/img/portfolio3.jpg'/></figure>
-    </header>
-    <div className='content'>
-      <h2>Portfolio</h2>
-      <main>
-        {_.map(projects, ({ title, description, id, items }) =>
+const {
+  any
+} = PropTypes;
+
+const Portfolio = ({ children }) => (
+  <Page headerImgSrc='/img/portfolio3.jpg'>
+    {children || (
+      <div>
+        <h2>Portfolio</h2>
+        <main>
+          {_.map(projects, ({ title, description, id, items }) => (
            <Figure
              key={id}
              title={title}
              description={description}
              link={`/portfolio/${id}`}
-             img={_.first(items).img}
+             src={_.first(items).img}
            />
-        )}
-      </main>
-    </div>
-  </article>
+          ))}
+        </main>
+      </div>
+    )}
+  </Page>
 );
+
+Portfolio.propTypes = {
+  children: any
+};
 
 export default Portfolio;

@@ -8,7 +8,8 @@
   "prod": {
     "urls": {
       "react": "//cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.min.js",
-      "react_dom": "https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.min.js"
+      "react_dom": "//cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.min.js",
+      "css": "/css/styles.css"
     }
   }
 }

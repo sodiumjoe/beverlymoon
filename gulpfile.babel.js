@@ -57,7 +57,7 @@ gulp.task('serve', () => {
     hot: true,
     historyApiFallback: true,
     quiet: false,
-    noInfo: true,
+    noInfo: false,
     lazy: false,
     filename: 'app.js',
     watchOptions: {

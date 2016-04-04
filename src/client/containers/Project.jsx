@@ -16,23 +16,18 @@ const Project = ({ params: { id } }) => {
   } = _.find(projects, _.matchesProperty('id', id));
 
   return (
-    <article>
-      <header>
-        <figure><img src='/img/portfolio3.jpg'/></figure>
-      </header>
-      <div className='content'>
-        <h2>{title}</h2>
-        <main>
+    <div>
+      <h2>{title}</h2>
+      <main>
         {_.map(items, ({ description, img }) =>
            <Figure
              key={img}
              description={description}
-             img={img}
+             src={img}
            />
         )}
-        </main>
-      </div>
-    </article>
+      </main>
+    </div>
   );
 };
 
