@@ -314,31 +314,20 @@ h3 {
 figure {
   .placeholder-container {
 
-    position: relative;
-    overflow: hidden;
+    background-color: @white;
 
     img {
       background-color: @gray-lighter;
       display: block;
       width: 100%;
-      position: absolute;
-      top: 0;
-      z-index: 0;
+      animation: fadein .3s ease-in;
     }
 
     .placeholder {
-      position: relative;
-      z-index: 10;
-      background-color: @gray-lighter;
       padding-top: 56.3%;
-      width: 2000px;
-      opacity: 0;
-      transition: opacity .3s ease-out;
+      width: 456px;
       &.header {
         padding-top: 24.363898223715794%;
-      }
-      &.loading {
-        opacity: 1;
       }
     }
   }
@@ -369,6 +358,7 @@ header {
 }
 
 .content {
+  background-color: @gray-lighter;
   padding: @gutter-width;
   .center;
   h2 {
@@ -386,6 +376,7 @@ section {
 }
 
 main {
+  padding-top: @gutter-width;
   .row;
   flex-wrap: wrap;
   text-align: center;
@@ -398,12 +389,6 @@ main {
     width: 50%;
     @media (max-width: @screen-xs) {
       padding: 0 @padding @gutter-width;
-      width: 100%;
-    }
-    .placeholder-container {
-      border: 1px solid @gray-lighty;
-    }
-    img {
       width: 100%;
     }
     a > img {

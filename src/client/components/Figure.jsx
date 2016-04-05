@@ -47,8 +47,10 @@ const Figure = createClass({
   getImgOrPlaceholder({ ready, aspectRatio, src }) {
     return (
       <div className='placeholder-container'>
-        <div className={classNames('placeholder', {loading: !ready}, aspectRatio)}></div>
-        <img src={src} />
+        { ready
+          ? <img src={src} />
+          : <div className={classNames('placeholder', aspectRatio)}></div>
+        }
       </div>
     );
   },
