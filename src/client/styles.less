@@ -178,6 +178,9 @@ h3 {
     color: @gray-darker;
     padding: @padding @gutter-width;
   }
+  &.not-found li {
+    margin: @padding;
+  }
 }
 
 #nav {
@@ -311,10 +314,29 @@ h3 {
 
 }
 
+.lightbox {
+
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  .center;
+  justify-content: center;
+
+}
+
 figure {
   .placeholder-container {
 
     background-color: @white;
+
+    a {
+      display: block;
+    }
 
     img {
       background-color: @gray-lighter;
@@ -376,7 +398,7 @@ section {
 }
 
 main {
-  padding-top: @gutter-width;
+  padding: @gutter-width 0;
   .row;
   flex-wrap: wrap;
   text-align: center;

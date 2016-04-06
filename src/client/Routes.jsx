@@ -4,7 +4,7 @@ import App from './containers/App.jsx';
 import Home from './containers/Home.jsx';
 import Portfolio from './containers/Portfolio.jsx';
 import Project from './containers/Project.jsx';
-import NotFound from './containers/NotFound.jsx';
+import NotFound from './components/NotFound.jsx';
 import { browserHistory, Router, Route, IndexRoute } from 'react-router';
 import createMemoryHistory from 'history/lib/createMemoryHistory';
 import useScroll from 'scroll-behavior/lib/useStandardScroll';

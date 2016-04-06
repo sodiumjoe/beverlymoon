@@ -48,7 +48,7 @@ const devCompiler = webpack(_.assign({}, webpackConfig, {
 
 const prodCompiler = webpack(webpackConfig);
 
-gulp.task('dev', gulpSequence('clean', ['dev:server:html', 'build:client:img', 'build:client:css'], 'serve'));
+gulp.task('dev', gulpSequence('clean', ['dev:server:html', 'build:client:img'], 'serve'));
 
 gulp.task('serve', () => {
 

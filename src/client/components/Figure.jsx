@@ -2,7 +2,7 @@ import React, { createClass, PropTypes } from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router';
 
-const { string } = PropTypes;
+const { func, string } = PropTypes;
 
 const loadImg = src => {
   const img = new Image();
@@ -19,23 +19,29 @@ const Figure = createClass({
   render() {
 
     const {
-      title,
-      src,
-      link,
+      aspectRatio,
       description,
-      aspectRatio
+      link,
+      onClick,
+      src,
+      title
     } = this.props;
 
     const {
-      ready,
-      firstLoad
+      firstLoad,
+      ready
     } = this.state;
 
-    const img = this.getImgOrPlaceholder({ ready, firstLoad, aspectRatio, src });
+    const img = this.getImgOrPlaceholder({ aspectRatio, firstLoad, ready, src });
 
     return (
       <figure>
-        {link ? <Link to={link}>{img}</Link> : img}
+        { link
+          ? (<Link onClick={onClick} to={link}>{img}</Link>)
+          : onClick
+            ? (<a href='javascript:void(0);' onClick={onClick}>{img}</a>)
+            : img
+        }
         <figcaption>
           {title ? <h3>{title}</h3> : null}
           {description ? <p>{description}</p> : null}
@@ -64,11 +70,12 @@ const Figure = createClass({
     this.setState({ ready: true, firstLoad });
   },
   propTypes: {
-    title: string,
-    src: string,
-    link: string,
+    aspectRatio: string,
     description: string,
-    aspectRatio: string
+    link: string,
+    onClick: func,
+    src: string,
+    title: string
   }
 });
 

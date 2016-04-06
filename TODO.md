@@ -19,19 +19,22 @@
 * page transitions ?
 
 ## tech
-* active link
-* server-side rendering
-  * static
-* 404
-  * nav links
+
+* lightbox
+* back to portfolio button
 * css animations
   * page transitions
 * optimizations
   * gzip
   * inline svg
   * https://github.com/giakki/uncss
-* router routes
-  * active link
+
++ 404
+  + nav links
++ active link
++ image placeholder
 + responsive
   + menu
   + stack columns
++ server-side rendering
+  + static

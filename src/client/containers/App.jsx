@@ -4,12 +4,7 @@ import { Link } from 'react-router';
 import React, { createClass, PropTypes } from 'react';
 import Logo from '../components/Logo.jsx';
 import NavLink from '../components/NavLink.jsx';
-
-const NAV_LINKS = [
-  { href: '/', title: 'home' },
-  { href: '/portfolio', title: 'portfolio' },
-  { href: '/about', title: 'about' }
-];
+import { NAV_LINKS } from '../constants';
 
 const SOCIAL_LINKS = [
   { href: 'https://twitter.com/beverlymoon', title: 'twitter', src: '/img/twitter.svg' },
