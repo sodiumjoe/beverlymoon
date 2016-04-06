@@ -3,22 +3,22 @@ export const projects = [{
   title: 'Nixon',
   description: 'foo bar',
   items: [{
-    img: '/img/NIXON SALA HERO.jpg',
+    src: '/img/NIXON SALA HERO.jpg',
     description: ''
   }, {
-    img: '/img/NIXON_ANTHEM.jpg',
+    src: '/img/NIXON_ANTHEM.jpg',
     description: ''
   }, {
-    img: '/img/NIXON_GENIE.jpg',
+    src: '/img/NIXON_GENIE.jpg',
     description: ''
   }, {
-    img: '/img/NIXON_MINX.jpg',
+    src: '/img/NIXON_MINX.jpg',
     description: ''
   }, {
-    img: '/img/NIXON_MONOPOLY.jpg',
+    src: '/img/NIXON_MONOPOLY.jpg',
     description: ''
   }, {
-    img: '/img/NIXON_TIME_TELLER_DIGI.jpg',
+    src: '/img/NIXON_TIME_TELLER_DIGI.jpg',
     description: ''
   }]
 }, {
@@ -26,22 +26,22 @@ export const projects = [{
   title: 'Pebble',
   description: 'bar baz',
   items: [{
-    img: '/img/PEBBLE1.jpg',
+    src: '/img/PEBBLE1.jpg',
     description: ''
   }, {
-    img: '/img/PEBBLE2.jpg',
+    src: '/img/PEBBLE2.jpg',
     description: ''
   }, {
-    img: '/img/PEBBLE3.jpg',
+    src: '/img/PEBBLE3.jpg',
     description: ''
   }, {
-    img: '/img/PEBBLE4.jpg',
+    src: '/img/PEBBLE4.jpg',
     description: ''
   }, {
-    img: '/img/PEBBLE5.jpg',
+    src: '/img/PEBBLE5.jpg',
     description: ''
   }, {
-    img: '/img/PEBBLE6.jpg',
+    src: '/img/PEBBLE6.jpg',
     description: ''
   }]
 }, {
@@ -49,22 +49,90 @@ export const projects = [{
   title: 'Zolo',
   description: 'zolo zolo zolo',
   items: [{
-    img: '/img/ZOLO1.jpg',
+    src: '/img/ZOLO1.jpg',
     description: ''
   }, {
-    img: '/img/ZOLO2.jpg',
+    src: '/img/ZOLO2.jpg',
     description: ''
   }, {
-    img: '/img/ZOLO3.jpg',
+    src: '/img/ZOLO3.jpg',
     description: ''
   }, {
-    img: '/img/ZOLO4.jpg',
+    src: '/img/ZOLO4.jpg',
     description: ''
   }, {
-    img: '/img/ZOLO5.jpg',
+    src: '/img/ZOLO5.jpg',
     description: ''
   }, {
-    img: '/img/ZOLO6.jpg',
+    src: '/img/ZOLO6.jpg',
+    description: ''
+  }]
+}, {
+  id: 'hora',
+  title: 'Hora',
+  description: 'hora hora hora',
+  items: [{
+    src: '/img/HORA1.jpg',
+    description: ''
+  }, {
+    src: '/img/HORA2.jpg',
+    description: ''
+  }, {
+    src: '/img/HORA3.jpg',
+    description: ''
+  }, {
+    src: '/img/HORA4.jpg',
+    description: ''
+  }]
+}, {
+  id: 'jaybird',
+  title: 'Jaybird',
+  description: 'jaybird',
+  items: [{
+    src: '/img/Jaybird1.jpg',
+    description: ''
+  }, {
+    src: '/img/Jaybird2.jpg',
+    description: ''
+  }, {
+    src: '/img/Jaybird3.jpg',
+    description: ''
+  }, {
+    src: '/img/Jaybird4.jpg',
+    description: ''
+  }, {
+    src: '/img/Jaybird5.jpg',
+    description: ''
+  }, {
+    src: '/img/Jaybird6.jpg',
+    description: ''
+  }]
+}, {
+  id: 'native',
+  title: 'Native',
+  description: 'native',
+  items: [{
+    src: '/img/NATIVE1.jpg',
+    description: ''
+  }, {
+    src: '/img/NATIVE2.jpg',
+    description: ''
+  }]
+}, {
+  id: 'ms',
+  title: 'Microsoft',
+  description: 'ms',
+  items: [{
+    src: '/img/MS1.jpg',
+    description: ''
+  }, {
+    src: '/img/MS2.jpg',
+    description: ''
+  }, {
+    src: '/img/MS3.jpg',
+    description: ''
+  }, {
+    src: '/img/MS4.jpg',
     description: ''
   }]
 }];
