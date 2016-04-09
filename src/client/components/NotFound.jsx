@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { map } from 'lodash';
 import React from 'react';
 import { NAV_LINKS } from '../constants';
 import NavLink from '../components/NavLink.jsx';
@@ -16,7 +16,7 @@ const NotFound = () => (
       <h2>Sorry, didn't find anything here.</h2>
       <main>
         <ul className='nav-links not-found'>
-          {_.map(NAV_LINKS, link => <li key={link.title}>
+          {map(NAV_LINKS, link => <li key={link.title}>
             <NavLink {...link}/>
           </li>)}
         </ul>

@@ -1,4 +1,8 @@
-import _ from 'lodash';
+import {
+  assign,
+  isEmpty,
+  map
+} from 'lodash';
 import LessPluginCleanCSS from 'less-plugin-clean-css';
 import gulp from 'gulp';
 import gulpSequence from 'gulp-sequence';
@@ -37,7 +41,7 @@ const {
   }
 } = process;
 
-const devCompiler = webpack(_.assign({}, webpackConfig, {
+const devCompiler = webpack(assign({}, webpackConfig, {
   entry: {
     app: [
       `webpack-dev-server/client?http://${HOST}:${PORT}/`,
@@ -100,7 +104,7 @@ gulp.task('build:client:js', cb => {
       chunksSort: false,
       assetsSort: false
     });
-    if (!_.isEmpty(errorString)) {
+    if (!isEmpty(errorString)) {
       gutil.log('[webpack]', errorString);
     }
     cb();
@@ -153,7 +157,7 @@ gulp.task('build:server:html', cb => {
     '/',
     '/about',
     '/portfolio'
-  ].concat(_.map(projects, ({ id }) => `/portfolio/${id}`));
+  ].concat(map(projects, ({ id }) => `/portfolio/${id}`));
 
   const routes = getRoutes('server')();
 

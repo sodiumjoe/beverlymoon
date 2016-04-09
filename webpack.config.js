@@ -49,11 +49,7 @@ module.exports = {
     path: path.join(__dirname, 'public'),
     filename: path.join('js', 'app.js')
   },
-  plugins: plugins,
-  externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM'
-  },
+  plugins,
   lessLoader: {
     lessPlugins: [
       new LessPluginAutoPrefix({ browsers: ['last 2 versions'] })

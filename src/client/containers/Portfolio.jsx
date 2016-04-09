@@ -1,4 +1,8 @@
-import _ from 'lodash';
+import {
+  first,
+  includes,
+  map
+} from 'lodash';
 import React, { PropTypes } from 'react';
 import Figure from '../components/Figure.jsx';
 import Page from '../components/Page.jsx';
@@ -13,19 +17,19 @@ const {
 const Portfolio = ({
   children,
   params: { id } = {}
-}) => (!children || children && _.includes(_.map(projects, 'id'), id))
+}) => (!children || children && includes(map(projects, 'id'), id))
   ? <Page headerImgSrc='/img/portfolio3.jpg'>
       {children || (
         <div>
           <h2>Portfolio</h2>
           <main>
-            {_.map(projects, ({ title, description, id, items }) => (
+            {map(projects, ({ title, description, id, items }) => (
              <Figure
                key={id}
                title={title}
                description={description}
                link={`/portfolio/${id}`}
-               src={_.first(items).src}
+               src={first(items).src}
              />
             ))}
           </main>

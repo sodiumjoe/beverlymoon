@@ -1,9 +1,9 @@
-import _ from 'lodash';
 import React, { createClass, PropTypes } from 'react';
 import { render } from 'react-dom';
 
 const {
   any,
+  number,
   string
 } = PropTypes;
 
@@ -13,16 +13,14 @@ const Portal = createClass({
 
   componentDidMount() {
 
-    const {
-      id
-    } = this.props;
+    const { portalId } = this.props;
 
-    let portalElement = window.document.getElementById(id);
+    let portalElement = document.getElementById(portalId);
 
     if (!portalElement) {
-      portalElement = window.document.createElement('div');
-      portalElement.id = id;
-      window.document.body.appendChild(portalElement);
+      portalElement = document.createElement('div');
+      portalElement.id = portalId;
+      document.body.appendChild(portalElement);
     }
 
     this.portalElement = portalElement;
@@ -31,29 +29,22 @@ const Portal = createClass({
   },
 
   componentWillUnmount() {
-    window.document.body.removeChild(this.portalElement);
+    setTimeout(() => {
+      document.body.removeChild(this.portalElement);
+    }, this.props.leaveTimeout);
   },
 
   componentDidUpdate() {
-
-    const {
-      children,
-      className
-    } = this.props;
-
-    render(
-      <div {..._.omit(this.props, 'id')} className={className}>
-        {children}
-      </div>,
-      this.portalElement
-    );
-
+    this.root = render(<div {...this.props} />, this.portalElement);
   },
+
+  getDefaultProps: () => ({ leaveTimeout: 0 }),
 
   propTypes: {
     children: any,
     className: string,
-    id: string.isRequired
+    leaveTimeout: number,
+    portalId: string.isRequired
   }
 
 });

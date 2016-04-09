@@ -1,5 +1,11 @@
-import _ from 'lodash';
+import {
+  find,
+  isNull,
+  map,
+  matchesProperty
+} from 'lodash';
 import React, { createClass, PropTypes } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Figure from '../components/Figure.jsx';
 import LightBox from '../components/LightBox.jsx';
 import { projects } from '../data';
@@ -9,39 +15,54 @@ const {
 } = PropTypes;
 
 const Project = createClass({
+
   render() {
 
-    const {
-      params: {
-        id
-      }
-    } = this.props;
-
+    const { params: { id } } = this.props;
     const { selectedItemIndex } = this.state;
-
     const {
       title,
       items
-    } = _.find(projects, _.matchesProperty('id', id));
-
-    const selectedItem = !_.isNull(selectedItemIndex) && items[selectedItemIndex];
+    } = find(projects, matchesProperty('id', id));
+    const selectedItem = !isNull(selectedItemIndex) && items[selectedItemIndex];
+    const onClickNext = selectedItemIndex === items.length -1
+      ? null
+      : () => this.selectItemIndex(selectedItemIndex + 1);
+    const onClickPrev = selectedItemIndex === 0
+      ? null
+      : () => this.selectItemIndex(selectedItemIndex - 1);
 
     return (
       <div>
         <h2>{title}</h2>
         <main>
-          {_.map(items, (item, index) =>
+          {map(items, (item, index) =>
              <Figure
                key={item.src}
-               onClick={() => this.selectItem(index)}
+               onClick={() => this.selectItemIndex(index)}
                {...item}
              />
           )}
         </main>
         { selectedItem
           ? (
-            <LightBox onClose={() => this.selectItem(null)}>
-              <Figure {...selectedItem}/>
+            <LightBox
+              onClickNext={onClickNext}
+              onClickPrev={onClickPrev}
+              onClose={() => this.selectItemIndex(null)}
+            >
+              <ReactCSSTransitionGroup
+                transitionName='lightbox-img'
+                transitionAppear={true}
+                transitionAppearTimeout={300}
+                transitionEnterTimeout={300}
+                transitionLeaveTimeout={300}
+              >
+                <Figure
+                  key={selectedItemIndex}
+                  {...selectedItem}
+                />
+              </ReactCSSTransitionGroup>
             </LightBox>
             )
           : null
@@ -50,7 +71,7 @@ const Project = createClass({
     );
   },
 
-  selectItem(index) {
+  selectItemIndex(index) {
     this.setState({ selectedItemIndex: index });
   },
 

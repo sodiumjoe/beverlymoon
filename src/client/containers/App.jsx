@@ -1,20 +1,16 @@
-import _ from 'lodash';
+import {
+  isEmpty,
+  map,
+  reject
+} from 'lodash';
 import classNames from 'classnames';
 import { Link } from 'react-router';
 import React, { createClass, PropTypes } from 'react';
 import Logo from '../components/Logo.jsx';
 import NavLink from '../components/NavLink.jsx';
-import { NAV_LINKS } from '../constants';
+import { SOCIAL_LINKS, NAV_LINKS } from '../constants';
 
-const SOCIAL_LINKS = [
-  { href: 'https://twitter.com/beverlymoon', title: 'twitter', src: '/img/twitter.svg' },
-  { href: 'https://instagram.com/beverlymoon', title: 'instagram', src: '/img/instagram.svg' },
-  { href: 'https://www.facebook.com/beverly.n.moon', title: 'facebook', src: '/img/facebook.svg' },
-  { href: 'https://pinterest.com/beverlymoon', title: 'pinterest', src: '/img/pinterest.svg' },
-  { href: 'mailto:beverly@beverlymoon.com', title: 'email', src: '/img/email.svg' }
-];
-
-const getTopPath = pathname => _.reject(pathname.split('/'), _.isEmpty)[0] || '';
+const getTopPath = pathname => reject(pathname.split('/'), isEmpty)[0] || '';
 
 const {
   any,
@@ -26,7 +22,7 @@ const App = createClass({
     const { location: { pathname }, children } = this.props;
     const { isActive } = this.state;
     const topPath = getTopPath(pathname);
-    const navLinks = _.map(NAV_LINKS, link =>
+    const navLinks = map(NAV_LINKS, link =>
      <li key={link.title}><NavLink {...link} onClick={this.handleNavClick}/></li>
     );
     return (
@@ -45,7 +41,7 @@ const App = createClass({
           </ul>
           <button
             id='mobile-nav-button'
-            className={classNames({ 'is-active': isActive }, topPath)}
+            className={classNames('hamburger', { 'is-active': isActive }, topPath)}
             onClick={() => this.setState({ isActive: !isActive })}
           >
             <span>toggle menu</span>
@@ -54,7 +50,7 @@ const App = createClass({
         {children}
         <footer>
           <ul className='social'>
-            {_.map(SOCIAL_LINKS, ({ href, title, src }) => <li className={title} key={title}><a title={title} href={href}><img src={src}/></a></li>)}
+            {map(SOCIAL_LINKS, ({ href, title, src }) => <li className={title} key={title}><a title={title} href={href}><img src={src}/></a></li>)}
           </ul>
           <section className='contact'>
             <p>Copyright &copy; 2016 &bull; Beverly Moon</p>
