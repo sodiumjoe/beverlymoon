@@ -14,13 +14,13 @@ const Home = () => (
         link='/about'
         src='/img/about.jpg'
         title='About'
-        description='Some stuff about me'
+        description='A quick snapshot'
       />
       <Figure
         link='/portfolio'
         src='/img/PORTFOLIO_HERO.jpg'
         title='Portfolio'
-        description="Some cool shit i've done"
+        description='A collection of my favorites'
       />
     </main>
   </Page>

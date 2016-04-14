@@ -7,7 +7,7 @@
 * images
   * headers
     * about
-    * portfolio
+    + portfolio
 * fonts
   + sans serif: proxima nova
   * serif: Garamond
@@ -15,20 +15,17 @@
     * https://www.typewolf.com/site-of-the-day/fonts/minister
     * https://www.typewolf.com/site-of-the-day/fonts/century-schoolbook
     * https://www.typewolf.com/site-of-the-day/fonts/egyptienne
-* logo
-* page transitions ?
++ logo
 
 ## tech
 
-* lightbox
-* back to portfolio button
-* css animations
-  * page transitions
 * optimizations
   * gzip
   * inline svg
   * https://github.com/giakki/uncss
 
++ lightbox
+  + transition on next/prev
 + 404
   + nav links
 + active link

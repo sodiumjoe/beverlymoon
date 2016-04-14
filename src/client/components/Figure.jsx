@@ -43,7 +43,11 @@ const Figure = createClass({
             : img
         }
         <figcaption>
-          {title ? <h3>{title}</h3> : null}
+          {title
+            ? link
+              ? <Link onClick={onClick} to={link}><h3>{title}</h3></Link>
+              : <h3>{title}</h3>
+            : null}
           {description ? <p>{description}</p> : null}
         </figcaption>
       </figure>

@@ -18,10 +18,10 @@ const Portfolio = ({
   children,
   params: { id } = {}
 }) => (!children || children && includes(map(projects, 'id'), id))
-  ? <Page headerImgSrc='/img/portfolio3.jpg'>
+  ? <Page headerImgSrc='/img/PORTFOLIO_HEADER3.jpg'>
       {children || (
         <div>
-          <h2>Portfolio</h2>
+          <h2>Selected Works</h2>
           <main>
             {map(projects, ({ title, description, id, items }) => (
              <Figure
@@ -29,7 +29,7 @@ const Portfolio = ({
                title={title}
                description={description}
                link={`/portfolio/${id}`}
-               src={first(items).src}
+               src={id === 'hora' ? items[5].src : first(items).src}
              />
             ))}
           </main>

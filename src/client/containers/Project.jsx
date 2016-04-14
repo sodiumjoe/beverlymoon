@@ -22,7 +22,9 @@ const Project = createClass({
     const { selectedItemIndex } = this.state;
     const {
       title,
-      items
+      items,
+      lead,
+      content
     } = find(projects, matchesProperty('id', id));
     const selectedItem = !isNull(selectedItemIndex) && items[selectedItemIndex];
     const onClickNext = selectedItemIndex === items.length -1
@@ -31,10 +33,18 @@ const Project = createClass({
     const onClickPrev = selectedItemIndex === 0
       ? null
       : () => this.selectItemIndex(selectedItemIndex - 1);
+    const getMarkup = () => ({ __html: content });
+    console.log(getMarkup());
 
     return (
       <div>
-        <h2>{title}</h2>
+        <div className='text-content-container'>
+          <h3>{title}</h3>
+          <div className='text-content'>
+            <p className='lead'>{lead}</p>
+            <span dangerouslySetInnerHTML={getMarkup()}></span>
+          </div>
+        </div>
         <main>
           {map(items, (item, index) =>
              <Figure

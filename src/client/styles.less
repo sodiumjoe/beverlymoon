@@ -23,6 +23,7 @@ body {
 
 // colors
 
+@primary-color:          #EC7C5D;
 @white:                  #fff;
 @gray-base:              #000;
 @gray-darker:            lighten(@gray-base, 13.5%); // #222
@@ -47,7 +48,7 @@ body {
 @font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
 
 @sans: proxima-nova, 'Helvetica Neue', sans-serif;
-@serif: Garamond;
+@serif: adobe-garamond-pro, Garamond;
 
 // screen sizes
 
@@ -78,8 +79,9 @@ body {
 @button-dim: @padding * 2;
 @hamburger-line-height: @button-dim / 10;
 
-a {
+a, a:visited {
   text-decoration: none;
+  color: @primary-color;
 }
 
 p, h2, h4, h6 {
@@ -95,7 +97,7 @@ h1, h3, h5 {
 }
 
 h1 { font-size: @font-size-h1; }
-h2 { font-size: @font-size-h2; }
+h2 { font-size: @font-size-h2; font-weight: 400; }
 h3 { font-size: @font-size-h3; }
 h4 { font-size: @font-size-h4; }
 h5 { font-size: @font-size-h5; }
@@ -105,7 +107,7 @@ h1, h3 { font-weight: 400; }
 
 h1, h2, h3, p {
   padding: 0;
-  margin-bottom: @gutter-width;
+  margin: @gutter-width / 2 0;
 }
 
 h3 {
@@ -440,6 +442,7 @@ figure {
     }
 
     img {
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
       background-color: @gray-lighter;
       display: block;
       width: 100%;
@@ -481,7 +484,6 @@ header {
 }
 
 .content {
-  background-color: @gray-lighter;
   padding: @gutter-width;
   .center;
   h2 {
@@ -495,6 +497,35 @@ section {
   align-items: center;
   p {
     max-width: @screen-sm / 2;
+  }
+}
+
+.text-content-container {
+  max-width: @screen-md;
+  display: block;
+  padding: 0 20px;
+  @media (min-width: @screen-sm-min) {
+    .row;
+    align-items: center;
+    h3 {
+      width: 33%;
+      text-align: center;
+    }
+    .lead {
+      flex-basis: 0;
+      flex-grow: 1;
+      font-size: @font-size-h3;
+    }
+    .text-content {
+      padding: 0 @gutter-width 0;
+      flex-basis: 0;
+      flex-grow: 2;
+      .column;
+      p {
+        margin-bottom: 0;
+      }
+    }
+    margin-bottom: @gutter-width;
   }
 }
 
@@ -514,15 +545,22 @@ main {
       padding: 0 @padding @gutter-width;
       width: 100%;
     }
-    a > img {
-      opacity: .8;
-      transition: opacity .25s ease-in-out;
-      @media (max-width: @screen-xs) {
-        opacity: 1;
-      }
-      &:hover {
-        opacity: 1;
-      }
+    h3 {
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+    p {
+      margin-top: 0;
+    }
+  }
+  a > img {
+    opacity: .8;
+    transition: opacity .25s ease-in-out;
+    @media (max-width: @screen-xs) {
+      opacity: 1;
+    }
+    &:hover {
+      opacity: 1;
     }
   }
 }
