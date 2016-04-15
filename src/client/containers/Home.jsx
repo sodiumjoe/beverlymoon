@@ -4,10 +4,8 @@ import Page from '../components/Page.jsx';
 
 const Home = () => (
   <Page headerImgSrc='/img/home2.jpg'>
-    <section className='lead'>
-      <h2>I&rsquo;m a Creative Director for <a href='http://cincodesign.com'>Cinco&nbsp;Design</a>.</h2>
-      <p>My passion is for curating experiences through products and invoking beauty in everyday things.</p>
-      <p>Always curious, I&rsquo;m looking for refreshing new projects and like-minded individuals to collaborate with.</p>
+    <section className='hero'>
+      <h2>Elevating experiences through products<br/> & finding the beauty in everyday things.</h2>
     </section>
     <main>
       <Figure

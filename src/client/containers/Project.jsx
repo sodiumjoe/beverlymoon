@@ -34,7 +34,6 @@ const Project = createClass({
       ? null
       : () => this.selectItemIndex(selectedItemIndex - 1);
     const getMarkup = () => ({ __html: content });
-    console.log(getMarkup());
 
     return (
       <div>

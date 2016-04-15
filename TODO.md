@@ -4,9 +4,9 @@
   * main text color
   * primary color (links, buttons, highlights)
   * secondary color
-* images
-  * headers
-    * about
++ images
+  + headers
+    + about
     + portfolio
 * fonts
   + sans serif: proxima nova
@@ -19,6 +19,7 @@
 
 ## tech
 
+* refactor/divide up css
 * optimizations
   * gzip
   * inline svg
