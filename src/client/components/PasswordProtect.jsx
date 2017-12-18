@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react';
+import shajs from 'sha.js';
 
 const { func } = PropTypes;
 
@@ -8,8 +9,9 @@ export default class PasswordProtect extends Component {
     super(props);
     this.state = {
       loggedIn: false,
-      loading: true,
-      password: ''
+      loading: false,
+      password: '',
+      height: 0
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -17,18 +19,21 @@ export default class PasswordProtect extends Component {
   }
 
   componentWillMount() {
-    const hash = localStorage && localStorage.getItem('beverlymoon.com:pwHash');
-
-    if (!hash) {
-      return this.setState({ loading: false });
+    if (typeof window !== 'undefined') {
+      this.setState({ height: window.innerHeight - 287 });
     }
+  //   const hash = localStorage && localStorage.getItem('beverlymoon.com:pwHash');
 
-    return this.checkHash(hash)
-      .then(() => this.setState({
-        loggedIn: true,
-        loading: false
-      }))
-      .catch(() => this.setState({ loading: false }));
+  //   if (!hash) {
+  //     return this.setState({ loading: false });
+  //   }
+
+  //   return this.checkHash(hash)
+  //     .then(() => this.setState({
+  //       loggedIn: true,
+  //       loading: false
+  //     }))
+  //     .catch(() => this.setState({ loading: false }));
   }
 
   componentDidMount() {
@@ -36,18 +41,12 @@ export default class PasswordProtect extends Component {
   }
 
   getHash(password) {
-    // https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest
-    const msgBuffer = new TextEncoder('utf-8').encode(password);
-    return crypto.subtle.digest('SHA-256', msgBuffer).then(hashBuffer => {
-      const hashArray = Array.from(new Uint8Array(hashBuffer));
-      return hashArray.map(b => ('00' + b.toString(16)).slice(-2)).join('');
-    });
+    return new shajs.sha256().update(password).digest('hex');
   }
 
   checkHash(hash) {
     return fetch(`/${hash}`)
-      .then(response => (console.log(response), (
-        response.status === 200))
+      .then(response => (response.status === 200)
         ? null
         : Promise.reject()
       );
@@ -59,12 +58,9 @@ export default class PasswordProtect extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    return this.getHash(this.state.password)
-      .then(hash => {
-        localStorage && localStorage.setItem('beverlymoon.com:pwHash', hash);
-        return hash;
-      })
-      .then(this.checkHash)
+    const hash = this.getHash(this.state.password);
+    // localStorage && localStorage.setItem('beverlymoon.com:pwHash', hash);
+    return this.checkHash(hash)
       .then(() => this.setState({
         loggedIn: true,
         loading: false
@@ -76,13 +72,13 @@ export default class PasswordProtect extends Component {
     const {
       handleSubmit,
       handleChange,
-      state: { password }
+      state: { password, height }
     } = this;
 
     return (
       <div
         className='content password'
-        style={{ height: window.innerHeight - 287 }}
+        style={{ height }}
       >
         <form onSubmit={handleSubmit}>
           <label>
