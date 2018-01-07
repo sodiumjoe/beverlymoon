@@ -56,7 +56,6 @@ const App = createClass({
             <p>Copyright &copy; 2016 &bull; Beverly Moon</p>
             <span>
               <address>Portland, Oregon</address>
-              &bull; (404) 386 2836
             </span>
           </section>
         </footer>
